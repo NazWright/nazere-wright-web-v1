@@ -1,0 +1,32 @@
+.nav-column {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nav-column-link {
+  font-size: 20px;
+  font-family: Aleo, serif;
+  text-decoration: none;
+  color: white;
+}
+
+.navigation {
+  height: 80px;
+  position: relative;
+  width: 100%;
+}
+
+.navigation > .col {
+  height: 100%;
+}
+
+.icons-nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.icons-nav i {
+  color: white;
+}
