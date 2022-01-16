@@ -31,6 +31,9 @@ export default function FeaturedProject() {
               textDecoration: "underline",
               cursor: "pointer",
             }}
+            onClick={() => {
+              window.location.href = "/projects";
+            }}
           >
             View All Projects&gt;&gt;&gt;
           </h1>
@@ -70,7 +73,13 @@ export default function FeaturedProject() {
                   integrations to restaurant industry Point of Sale systems.
                   Designed using WordPress.
                 </p>
-                <div>
+                <div
+                  className="app-marketplace-link"
+                  onClick={() =>
+                    (window.location.href =
+                      "https://omnivoredev.wpengine.com/app-marketplace/")
+                  }
+                >
                   <i className="fa fa-external-link" style={{ fontSize: 30 }} />
                   <span>Go to website</span>
                 </div>

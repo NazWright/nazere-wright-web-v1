@@ -30,3 +30,6 @@
 .icons-nav i {
   color: white;
 }
+.app-marketplace-link {
+  cursor: pointer;
+}
