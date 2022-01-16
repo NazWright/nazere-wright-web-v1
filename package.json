@@ -1,0 +1,24 @@
+{
+  "name": "nazere-wright-web-v1",
+  "version": "1.0.0",
+  "description": "Web portfolio for Software Engineer: Nazere Wright",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "server": "nodemon index.js",
+    "frontend": "npm run start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run frontend\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend",
+    "test": "NODE_ENV=test nodemon --exec 'mocha'"
+  },
+  "author": "Nazere Wright",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.2"
+  },
+  "devDependencies": {
+    "concurrently": "^7.0.0",
+    "mocha": "^9.1.4",
+    "nodemon": "^2.0.15"
+  }
+}
