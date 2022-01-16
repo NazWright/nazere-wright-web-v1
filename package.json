@@ -5,11 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "server": "nodemon index.js",
-    "frontend": "npm run start --prefix frontend",
-    "dev": "concurrently \"npm run server\" \"npm run frontend\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend",
-    "test": "NODE_ENV=test nodemon --exec 'mocha'"
+    "server": "nodemon index.js"
   },
   "author": "Nazere Wright",
   "license": "ISC",
