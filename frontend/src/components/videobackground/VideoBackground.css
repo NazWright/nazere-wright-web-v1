@@ -1,10 +1,21 @@
 #background-video {
   object-fit: cover;
-  position: fixed;
   z-index: -1;
 }
 #bg-video-wrapper {
   box-shadow: inset 0 0 0 2000px rgb(34 35 39 / 80%);
   z-index: -1;
   overflow-x: hidden;
+}
+
+@media only screen and (max-width: 991px) {
+  #background-video {
+    position: absolute;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  #background-video {
+    position: fixed;
+  }
 }
