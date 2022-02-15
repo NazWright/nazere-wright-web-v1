@@ -1,6 +1,5 @@
 .features-boxed {
   color: #313437;
-  background-color: white;
 }
 
 .features-boxed p {
@@ -14,7 +13,7 @@
   color: inherit;
 }
 
-@media (max-width:767px) {
+@media (max-width: 767px) {
   .features-boxed h2 {
     margin-bottom: 25px;
     padding-top: 25px;
@@ -80,7 +79,7 @@ button {
 }
 
 #learn-more:hover {
-  border: 6px solid white ;
+  border: 6px solid white;
   background: transparent;
   /*transition: 0.5s;*/
 }
@@ -108,7 +107,7 @@ button {
   /*bottom: 100px;*/
   /*right: 200px;*/
   height: 200px;
-  box-shadow: 0px 10px 30px rgb(98,99,101);
+  box-shadow: 0px 10px 30px rgb(98, 99, 101);
   background: transparent;
   border-radius: 12px;
   border: 6px solid white;
@@ -149,7 +148,7 @@ div {
   border-color: transparent;
   border-radius: 13px;
   background: linear-gradient(#9e78fb 1%, white), transparent;
-  box-shadow: 2px 13px 9px rgb(210,210,210);
+  box-shadow: 2px 13px 9px rgb(210, 210, 210);
   /*border: 2px solid white;*/
 }
 
@@ -204,4 +203,3 @@ div {
     bottom: 100px;
   }
 }
-

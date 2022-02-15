@@ -5,14 +5,10 @@ import headshot from "./Wright,Nazere_Headshot.png";
 
 export default function AboutMe() {
   return (
-    <section>
-      <Curve upward={true} />
-      <section style={{ maxHeight: "300px", background: "rgb(241,175,12)" }}>
+    <section style={{ marginTop: "200px" }}>
+      <section>
         <div className="container" style={{ height: "400px" }}>
-          <div
-            className="row d-flex flex-column aboutme-row"
-            style={{ width: "100%" }}
-          >
+          <div className="row d-flex flex-column aboutme-row">
             <div
               className="col d-flex justify-content-center align-items-end"
               style={{ height: "100%", width: "100%", padding: "0px" }}

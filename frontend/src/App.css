@@ -1,8 +1,8 @@
 /* global styles here */
 html {
   height: 100vh;
-  width: 100vw;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
 }
 
 body {

@@ -40,7 +40,7 @@ export default function FeaturedProject() {
         </div>
       </div>
       <div className="container">
-        <div className="row">
+        <div className="row row-featured-proj">
           <div className="col">
             <img
               style={{
@@ -60,10 +60,7 @@ export default function FeaturedProject() {
               justifyContent: "center",
             }}
           >
-            <div
-              className="card"
-              style={{ right: 100, boxShadow: "3px 5px 10px" }}
-            >
+            <div className="card card-featured-proj">
               <div className="card-body">
                 <h4 className="card-title" style={{ color: "rgb(152,71,190)" }}>
                   Omnivore App Marketplace

@@ -3,7 +3,7 @@ import "./Nav.css";
 
 export default function Nav() {
   return (
-    <section className="header-color-primary">
+    <section className="">
       <div className="row navigation">
         <div className="col nav-column">
           {/* Nav links */}

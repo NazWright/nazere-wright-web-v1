@@ -16,6 +16,7 @@
   height: 80px;
   position: relative;
   width: 100%;
+  margin: 0;
 }
 
 .navigation > .col {
@@ -32,4 +33,36 @@
 }
 .app-marketplace-link {
   cursor: pointer;
+}
+.card-featured-proj {
+  right: 100px;
+  box-shadow: 3px 5px 10px;
+}
+
+@media only screen and (max-width: 991px) {
+  .icons-nav {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  .header-desc {
+    text-align: center;
+    padding: 1rem;
+  }
+  .header-section {
+    margin-top: 2rem;
+    margin-bottom: 0;
+  }
+  .row.row-featured-proj {
+    flex-direction: column;
+  }
+  .card-featured-proj {
+    right: 0px;
+    margin-top: 1rem;
+  }
+  .about-me-header {
+    right: 0px !important;
+  }
+  .headshot {
+    left: 45px;
+  }
 }

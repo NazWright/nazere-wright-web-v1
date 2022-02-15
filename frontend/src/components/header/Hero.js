@@ -6,7 +6,6 @@ export default function Hero() {
   return (
     <div>
       <Header />
-      <Curve upward={false} />
     </div>
   );
 }

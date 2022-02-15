@@ -1,0 +1,10 @@
+#background-video {
+  object-fit: cover;
+  position: fixed;
+  z-index: -1;
+}
+#bg-video-wrapper {
+  box-shadow: inset 0 0 0 2000px rgb(34 35 39 / 80%);
+  z-index: -1;
+  overflow-x: hidden;
+}
