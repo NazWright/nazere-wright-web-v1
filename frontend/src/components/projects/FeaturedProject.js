@@ -74,7 +74,7 @@ export default function FeaturedProject() {
                   className="app-marketplace-link"
                   onClick={() =>
                     (window.location.href =
-                      "https://omnivoredev.wpengine.com/app-marketplace/")
+                      "https://omnivoredev.wpengine.com/connect-marketplace/")
                   }
                 >
                   <i className="fa fa-external-link" style={{ fontSize: 30 }} />
