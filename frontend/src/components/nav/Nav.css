@@ -65,4 +65,7 @@
   .headshot {
     left: 45px;
   }
+  #background-video {
+    height: 250vh;
+  }
 }
