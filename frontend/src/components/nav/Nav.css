@@ -12,11 +12,16 @@
   color: white;
 }
 
+.overlay {
+  box-shadow: inset 0 0 0 2000px rgb(34 35 39 / 75%);
+}
+
 .navigation {
   height: 80px;
   position: relative;
   width: 100%;
   margin: 0;
+  box-shadow: inset 0 0 0 2000px rgb(34 35 39 / 75%);
 }
 
 .navigation > .col {

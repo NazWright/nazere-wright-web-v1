@@ -9,6 +9,19 @@ body {
   height: 100%;
   width: 100%;
 }
+.project-link {
+  color: black;
+}
+
+.display-flex {
+  display: flex;
+}
+.project-container {
+  flex-wrap: wrap;
+}
+.justify-content-s-a {
+  justify-content: space-around;
+}
 /* for the background of the header */
 .header-color-primary {
   background-color: rgb(152, 71, 190);
@@ -36,4 +49,12 @@ body {
   font-size: 35px;
   font-weight: bold;
   text-shadow: 0px 0px 5px var(--bs-indigo);
+}
+
+.project-card {
+  background: white;
+  margin: 1rem;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 3px 3px 8px white;
 }

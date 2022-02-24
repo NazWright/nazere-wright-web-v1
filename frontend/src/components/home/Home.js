@@ -9,9 +9,7 @@ import VideoBackground from "../videobackground/VideoBackground";
 
 export default function Home() {
   return (
-    <div id="bg-video-wrapper">
-      <VideoBackground />
-      <Nav />
+    <div id="bg-video-wrapper" className="overlay">
       <Hero />
       <TopSkills />
       <FeaturedProject />

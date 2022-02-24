@@ -1,5 +1,5 @@
 import React from "react";
-import omnivoreWireFrame from "./Screen Shot 2022-01-03 at 12.58.22 PM.png";
+import { images } from "../../config/images";
 
 export default function FeaturedProject() {
   return (
@@ -49,7 +49,7 @@ export default function FeaturedProject() {
                 borderRadius: 10,
                 border: "1px solid",
               }}
-              src={omnivoreWireFrame}
+              src={images.FEATPROJ}
             />
           </div>
           <div

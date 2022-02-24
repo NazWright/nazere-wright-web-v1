@@ -1,7 +1,6 @@
 import React from "react";
-import Curve from "../curve/Curve";
 import Slider from "../slider/Slider";
-import headshot from "./Wright,Nazere_Headshot.png";
+import { images } from "../../config/images";
 
 export default function AboutMe() {
   return (
@@ -13,7 +12,7 @@ export default function AboutMe() {
               className="col d-flex justify-content-center align-items-end"
               style={{ height: "100%", width: "100%", padding: "0px" }}
             >
-              <img className="headshot" src={headshot} />
+              <img className="headshot" src={images.HEADSHOT} />
               <h1 className="align-self-center about-me-header">About Me</h1>
             </div>
             <div className="col">
