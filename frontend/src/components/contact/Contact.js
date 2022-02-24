@@ -58,7 +58,7 @@ export default function Contact() {
                     width:
                       controlDimenstions.deviceType === "desktop"
                         ? "12vw"
-                        : "20vw",
+                        : "30vw",
                     height:
                       controlDimenstions.deviceType === "desktop"
                         ? "6vh"
