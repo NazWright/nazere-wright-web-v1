@@ -26,7 +26,6 @@ export default function SingleProject({
     return (
       <div>
         <img
-          height={deviceType === "mobile" ? 100 : 200}
           width={"100%"}
           style={{
             borderRadius: "10px",
