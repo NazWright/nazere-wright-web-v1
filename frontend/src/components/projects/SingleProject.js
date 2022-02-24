@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { FaLink, FaGithub } from "react-icons/fa";
+import IconLink from "../icon-link/IconLink";
 
 export default function SingleProject({
   projectName,
@@ -21,10 +22,6 @@ export default function SingleProject({
     links: {
       color: "black",
     },
-  };
-
-  const navigateToLink = (link) => {
-    window.location.href = link;
   };
 
   const defaultContent = () => {
@@ -55,60 +52,38 @@ export default function SingleProject({
         </h2>
         <div>
           {projectLink ? (
-            <div
-              className="github-link-container"
-              onClick={() => navigateToLink(projectLink)}
-            >
-              {" "}
-              <FaLink
-                size={
-                  deviceType === "mobile" || deviceType === "tablet"
-                    ? "6vw"
-                    : "2.2vw"
-                }
-                className="github-link-icon"
-              />{" "}
-              <span
-                className="link-icon-text"
-                style={{
-                  fontSize:
+            <IconLink
+              icon={
+                <FaLink
+                  size={
                     deviceType === "mobile" || deviceType === "tablet"
-                      ? "4vw"
-                      : "1.5vw",
-                }}
-              >
-                Website
-              </span>{" "}
-            </div>
+                      ? "6vw"
+                      : "2.2vw"
+                  }
+                  className="github-link-icon"
+                />
+              }
+              labelText="Website"
+              URL={projectLink}
+            />
           ) : undefined}
         </div>
         <div>
           {projectGithub ? (
-            <div
-              className="github-link-container"
-              onClick={() => navigateToLink(projectGithub)}
-            >
-              {" "}
-              <FaGithub
-                size={
-                  deviceType === "mobile" || deviceType === "tablet"
-                    ? "6vw"
-                    : "2.2vw"
-                }
-                className="github-link-icon"
-              />{" "}
-              <span
-                className="link-icon-text"
-                style={{
-                  fontSize:
+            <IconLink
+              icon={
+                <FaGithub
+                  size={
                     deviceType === "mobile" || deviceType === "tablet"
-                      ? "4vw"
-                      : "1.5vw",
-                }}
-              >
-                GitHub
-              </span>{" "}
-            </div>
+                      ? "6vw"
+                      : "2.2vw"
+                  }
+                  className="github-link-icon"
+                />
+              }
+              labelText="Github"
+              URL={projectGithub}
+            />
           ) : undefined}
         </div>
       </div>
