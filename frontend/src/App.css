@@ -56,7 +56,7 @@ body {
   margin: 1rem;
   border-radius: 10px;
   padding: 1rem;
-  box-shadow: 3px 3px 8px white;
+  box-shadow: 2px 3px 5px lightblue;
 }
 
 .view-desc-project {
@@ -69,4 +69,38 @@ body {
 }
 .view-desc-project:hover {
   box-shadow: 1px 3px 10px black;
+}
+
+.github-link-icon {
+  color: black;
+  transition: 0.5s ease-in;
+}
+.link-icon-text {
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: 0.5s ease-in;
+  font-size: 1vw;
+}
+.github-link-container {
+  cursor: pointer;
+  transition: 0.5s ease-in;
+}
+
+.github-link-container:hover .github-link-icon {
+  color: rgb(12, 176, 241);
+}
+
+.github-link-container:hover .link-icon-text {
+  color: rgb(12, 176, 241);
+  letter-spacing: 2px;
+  font-weight: 800;
+}
+
+.view-desc-project {
+  transition: 0.5s;
+}
+.view-desc-project:hover {
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
 }
