@@ -1,5 +1,4 @@
 import React from "react";
-import ComingSoon from "../ComingSoon";
 import { useSelector } from "react-redux";
 import "./Contact.css";
 
@@ -14,7 +13,12 @@ export default function Contact() {
     >
       <div
         className="card"
-        style={{ width: controlDimenstions.screenWidth / 1.5 }}
+        style={{
+          width:
+            controlDimenstions.deviceType === "desktop"
+              ? controlDimenstions.screenWidth / 1.5
+              : controlDimenstions.screenWidth * 0.8,
+        }}
       >
         <div className="card-header">
           <span className="contact-me-header">Contact Me</span>
