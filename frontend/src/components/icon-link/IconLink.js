@@ -1,5 +1,4 @@
 import React from "react";
-import { FaLink, FaGithub } from "react-icons/fa";
 import { useSelector } from "react-redux";
 
 export default function IconLink({ labelText, icon, style, URL }) {
