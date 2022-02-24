@@ -28,6 +28,8 @@ export default function App() {
       );
     };
 
+    handleScreenResize();
+
     window.addEventListener("resize", handleScreenResize);
 
     return () => {

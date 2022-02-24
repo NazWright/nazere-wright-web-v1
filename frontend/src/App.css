@@ -58,3 +58,15 @@ body {
   padding: 1rem;
   box-shadow: 3px 3px 8px white;
 }
+
+.view-desc-project {
+  border-radius: 10px;
+  background: linear-gradient(rgb(152, 71, 190), rgb(12, 176, 241) 99%);
+  color: white;
+  border: white;
+  box-shadow: 1px 3px 3px black;
+  transition: 0.7s ease-out;
+}
+.view-desc-project:hover {
+  box-shadow: 1px 3px 10px black;
+}
