@@ -4,3 +4,11 @@
   text-shadow: 0px 0px 7px #9e78fb;
   text-transform: uppercase;
 }
+
+.skills-header {
+  font-size: 3vw;
+  color: white;
+  text-shadow: 3px 3px 3px lightblue;
+  font-weight: bold;
+  text-transform: uppercase;
+}

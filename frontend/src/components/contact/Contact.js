@@ -14,6 +14,7 @@ export default function Contact() {
       <div
         className="card"
         style={{
+          borderRadius: "16px",
           width:
             controlDimenstions.deviceType === "desktop"
               ? controlDimenstions.screenWidth / 1.5

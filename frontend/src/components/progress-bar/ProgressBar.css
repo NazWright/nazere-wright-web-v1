@@ -1,0 +1,23 @@
+.progress-bar {
+  background-color: white;
+  border-radius: 25px;
+  padding: 1rem;
+  height: 75px;
+  position: relative;
+}
+.progress-outline {
+  border-radius: 10px;
+  height: 100%;
+  width: 0%;
+  position: relative;
+  transition: 2s ease;
+  transition-delay: 0.5s;
+  box-shadow: 1px 1px 2px black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+.dropdown-icon:hover {
+  fill: rgb(47, 185, 240);
+}
