@@ -81,7 +81,7 @@ export default function Projects() {
 
       <div
         className="project-container display-flex justify-content-s-a"
-        style={{ marginTop: "2rem", padding: "2rem" }}
+        style={{ marginTop: "2rem", padding: "1rem" }}
       >
         {projects.map((project) => {
           return <SingleProject {...project} key={project.projectName} />;

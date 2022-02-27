@@ -26,7 +26,7 @@ export default function Contact() {
             className="contact-me-header"
             style={{
               fontSize:
-                controlDimenstions.deviceType === "desktop" ? "4vw" : "8vw",
+                controlDimenstions.deviceType === "desktop" ? "4vw" : "6vw",
             }}
           >
             Contact Me
