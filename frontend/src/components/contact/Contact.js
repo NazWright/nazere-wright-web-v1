@@ -22,7 +22,15 @@ export default function Contact() {
         }}
       >
         <div className="card-header">
-          <span className="contact-me-header">Contact Me</span>
+          <span
+            className="contact-me-header"
+            style={{
+              fontSize:
+                controlDimenstions.deviceType === "desktop" ? "4vw" : "8vw",
+            }}
+          >
+            Contact Me
+          </span>
         </div>
         <div className="card-body">
           <form className="contact-me-form fluid-width d-flex justify-content-center flex-direction-col">

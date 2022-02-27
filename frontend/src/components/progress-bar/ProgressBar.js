@@ -43,14 +43,14 @@ export default function ProgressBar({
           color: "white",
           fontWeight: "bold",
           letterSpacing: "1px",
-          fontSize: deviceType === "desktop" ? "2vw" : "4vw",
+          fontSize: deviceType === "desktop" ? "2vw" : "4.5vw",
         }}
       >
         {label}
         {!dropDownClicked ? (
           <IoIosArrowDropdownCircle
             style={{
-              fontSize: deviceType === "desktop" ? "2vw" : "4vw",
+              fontSize: deviceType === "desktop" ? "2vw" : "4.5vw",
               color: "white",
               marginLeft: "1rem",
               cursor: "pointer",
