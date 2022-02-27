@@ -9,7 +9,7 @@ import VideoBackground from "../videobackground/VideoBackground";
 
 export default function Home() {
   return (
-    <div id="bg-video-wrapper" className="overlay">
+    <div id="bg-video-wrapper" style={{ overflow: "hidden" }}>
       <Hero />
       <TopSkills />
       <FeaturedProject />

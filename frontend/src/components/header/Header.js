@@ -14,7 +14,6 @@ export default function Header() {
         <div className="hero-branding col d-flex flex-column align-items-center">
           <h1>{name}</h1>
           <h2 className="tagline">{tagline}</h2>
-          <p className="header-desc">{desc}</p>
         </div>
       </div>
     </section>

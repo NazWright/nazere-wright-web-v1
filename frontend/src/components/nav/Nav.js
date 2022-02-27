@@ -1,7 +1,7 @@
 import React from "react";
 import "./Nav.css";
 import { useSelector } from "react-redux";
-import { FaQq } from "react-icons/fa";
+import { FaHome } from "react-icons/fa";
 
 export default function Nav() {
   const { deviceType, screenHeight, screenWidth } = useSelector(
@@ -9,6 +9,29 @@ export default function Nav() {
   );
 
   const deviceIsDesktop = deviceType === "desktop" ? true : false;
+
+  const onHomePage = window.location.pathname === "/" ? true : false;
+
+  const toHomePage = () => {
+    window.location.href = "/";
+  };
+
+  const HomePageLink = () => {
+    return (
+      <div
+        className={`${
+          deviceIsDesktop ? "" : "fluid-width"
+        } col col-2 d-flex justify-content-center `}
+      >
+        <img
+          height={220}
+          src="https://nxwv1images.s3.amazonaws.com/Nazere+Wright.png"
+          onClick={toHomePage}
+          style={{ cursor: "pointer" }}
+        ></img>
+      </div>
+    );
+  };
 
   const changeBackground = () => {
     var header = document.querySelector("top");
@@ -37,6 +60,8 @@ export default function Nav() {
           deviceIsDesktop ? "flex-row flex-wrap" : "flex-column"
         } row navigation align-items-center`}
       >
+        <HomePageLink />
+
         <div
           className="col nav-column mb-2"
           style={{

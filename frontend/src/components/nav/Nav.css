@@ -11,6 +11,8 @@
   text-decoration: none;
   color: white;
   transition: 0.5s ease-in-out;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 .nav-column-link:hover {
   color: rgb(152, 71, 190);

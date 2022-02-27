@@ -12,10 +12,12 @@ export default function FeaturedProject() {
           <h1
             className="display-5 text-center"
             style={{
-              color: "rgb(152,71,190)",
+              color: "white",
               fontSize: 35,
-              textShadow: "0px 0px 7px #9e78fb",
+              textShadow: "3px 3px 3px #9e78fb",
               textTransform: "uppercase",
+              fontWeight: "bold",
+              marginBottom: "2rem",
             }}
           >
             Featured Project
