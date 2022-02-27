@@ -1,12 +1,9 @@
 import React from "react";
 import "./Nav.css";
 import { useSelector } from "react-redux";
-import { FaHome } from "react-icons/fa";
 
 export default function Nav() {
-  const { deviceType, screenHeight, screenWidth } = useSelector(
-    (state) => state.control
-  );
+  const { deviceType } = useSelector((state) => state.control);
 
   const deviceIsDesktop = deviceType === "desktop" ? true : false;
 
@@ -86,7 +83,7 @@ export default function Nav() {
           </div>
         </div>
         {/* Icons */}
-        <div className="col icons-nav">
+        <div className={`${deviceIsDesktop ? "col-2" : ""} col icons-nav`}>
           <div
             className="icon-container"
             onClick={() => {

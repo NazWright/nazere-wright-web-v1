@@ -16,7 +16,7 @@ export default function IconLink({ labelText, icon, style, URL }) {
         style={{
           fontSize:
             deviceType === "mobile" || deviceType === "tablet"
-              ? "4vw"
+              ? "3vw"
               : "1.5vw",
         }}
       >

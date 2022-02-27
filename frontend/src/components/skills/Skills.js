@@ -40,14 +40,21 @@ export default function Skills() {
 
   return (
     <div
-      style={{ height: screenHeight, padding: "3rem" }}
+      style={{ overflow: "hidden", padding: "3rem" }}
       className={`${
         deviceType === "desktop" ? "flex-row flex-wrap" : "flex-column"
       } d-flex justify-space-around`}
       id="bg-video-wrapper"
     >
       <div className="fluid-width text-center">
-        <h2 className="skills-header mb-5">Skills</h2>
+        <h2
+          className="skills-header mb-5"
+          style={{
+            fontSize: deviceType === "desktop" ? "3vw" : "6vw",
+          }}
+        >
+          Skills
+        </h2>
       </div>
       <div
         className={`${

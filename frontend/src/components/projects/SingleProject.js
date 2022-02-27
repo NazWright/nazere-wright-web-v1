@@ -38,10 +38,7 @@ export default function SingleProject({
         ></img>
         <h2
           style={{
-            fontSize:
-              deviceType === "mobile" || deviceType === "tablet"
-                ? "6vw"
-                : "2vw",
+            fontSize: deviceType === "desktop" ? "2vw" : "4vw",
             fontWeight: "bold",
             margin: "2rem",
             height: 50,
@@ -57,8 +54,8 @@ export default function SingleProject({
                 <FaLink
                   size={
                     deviceType === "mobile" || deviceType === "tablet"
-                      ? "6vw"
-                      : "2.2vw"
+                      ? "3vw"
+                      : "1.5vw"
                   }
                   className="github-link-icon"
                 />
@@ -75,8 +72,8 @@ export default function SingleProject({
                 <FaGithub
                   size={
                     deviceType === "mobile" || deviceType === "tablet"
-                      ? "6vw"
-                      : "2.2vw"
+                      ? "3vw"
+                      : "1.5vw"
                   }
                   className="github-link-icon"
                 />
@@ -124,7 +121,7 @@ export default function SingleProject({
           margin: "1rem",
           height: deviceType == "desktop" ? "8vh" : "8vh",
           width: deviceType == "desktop" ? "10vw" : "30vw",
-          fontSize: deviceType == "desktop" ? "1vw" : "3vw",
+          fontSize: deviceType == "desktop" ? "1vw" : "2vw",
         }}
         onClick={handleDescClick}
       >
