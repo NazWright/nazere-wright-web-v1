@@ -10,6 +10,13 @@
   font-family: Aleo, serif;
   text-decoration: none;
   color: white;
+  transition: 0.5s ease-in-out;
+}
+.nav-column-link:hover {
+  color: rgb(152, 71, 190);
+  text-shadow: 1px 1px 1px white;
+  letter-spacing: 1px;
+  font-weight: bold;
 }
 
 .overlay {
@@ -25,6 +32,13 @@
 
 .navigation > .col {
   height: 100%;
+}
+
+.icon-container .fa {
+  transition: 0.5s ease-in-out;
+}
+.icon-container .fa:hover {
+  color: rgb(152, 71, 190);
 }
 
 .icons-nav {

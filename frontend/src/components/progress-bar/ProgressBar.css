@@ -18,6 +18,10 @@
   justify-content: center;
   font-weight: bold;
 }
+.dropdown-icon {
+  transition: 500ms ease-in-out;
+}
+
 .dropdown-icon:hover {
   fill: rgb(47, 185, 240);
 }

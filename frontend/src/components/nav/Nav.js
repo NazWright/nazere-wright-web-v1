@@ -63,24 +63,36 @@ export default function Nav() {
         {/* Icons */}
         <div className="col icons-nav">
           <div
+            className="icon-container"
             onClick={() => {
               window.location.href =
                 "https://www.instagram.com/nazwrightthedeveloper/";
+            }}
+            style={{
+              cursor: "pointer",
             }}
           >
             <i className="fa fa-instagram social-media-icon"></i>
           </div>
           <div
+            className="icon-container"
             onClick={() => {
               window.location.href = "https://github.com/NazWright";
+            }}
+            style={{
+              cursor: "pointer",
             }}
           >
             <i className="fa fa-github-square social-media-icon"></i>
           </div>
           <div
+            className="icon-container"
             onClick={() => {
               window.location.href =
                 "https://www.linkedin.com/in/nazere-wright-b486b0172/";
+            }}
+            style={{
+              cursor: "pointer",
             }}
           >
             <i className="fa fa-linkedin social-media-icon"> </i>
