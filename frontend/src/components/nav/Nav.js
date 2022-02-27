@@ -1,11 +1,14 @@
 import React from "react";
 import "./Nav.css";
 import { useSelector } from "react-redux";
+import { FaQq } from "react-icons/fa";
 
 export default function Nav() {
   const { deviceType, screenHeight, screenWidth } = useSelector(
     (state) => state.control
   );
+
+  const deviceIsDesktop = deviceType === "desktop" ? true : false;
 
   const changeBackground = () => {
     var header = document.querySelector("top");
@@ -25,13 +28,21 @@ export default function Nav() {
 
   return (
     <section
-      className="navbar-sticky-scroll"
       style={{
-        position: deviceType === "desktop" ? undefined : "sticky",
+        position: deviceIsDesktop ? undefined : "sticky",
       }}
     >
-      <div className="row navigation">
-        <div className="col nav-column">
+      <div
+        className={`${
+          deviceIsDesktop ? "flex-row flex-wrap" : "flex-column"
+        } row navigation align-items-center`}
+      >
+        <div
+          className="col nav-column mb-2"
+          style={{
+            padding: "1rem",
+          }}
+        >
           {/* Nav links */}
           <div>
             <a href="/projects" className="nav-column-link">
@@ -50,7 +61,7 @@ export default function Nav() {
           </div>
         </div>
         {/* Icons */}
-        <div className="col-3 icons-nav">
+        <div className="col icons-nav">
           <div
             onClick={() => {
               window.location.href =
