@@ -84,7 +84,7 @@ export default function ProgressBar({
           style={{
             width: `${value}%`,
             backgroundColor,
-            fontSize: deviceType === "desktop" ? "1.3vw" : "2.5vw",
+            fontSize: deviceType === "desktop" ? "1.5vw" : "3vw",
           }}
         >
           {showValue ? `${value}%` : undefined}

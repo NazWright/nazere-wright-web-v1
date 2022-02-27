@@ -1,9 +1,35 @@
 import React from "react";
 import "./Nav.css";
+import { useSelector } from "react-redux";
 
 export default function Nav() {
+  const { deviceType, screenHeight, screenWidth } = useSelector(
+    (state) => state.control
+  );
+
+  const changeBackground = () => {
+    var header = document.querySelector("top");
+
+    window.onscroll = function () {
+      //TOP
+      if (header.getBoundingClientRect().top <= 0) {
+        console.log("TRIGGER: top of div reached.");
+      }
+      //BOTTOM
+      if (header.getBoundingClientRect().bottom <= 0) {
+        header.style.background = "red";
+        console.log("bottom");
+      }
+    };
+  };
+
   return (
-    <section className="">
+    <section
+      className="navbar-sticky-scroll"
+      style={{
+        position: deviceType === "desktop" ? undefined : "sticky",
+      }}
+    >
       <div className="row navigation">
         <div className="col nav-column">
           {/* Nav links */}
@@ -15,11 +41,6 @@ export default function Nav() {
           <div>
             <a href="/skills" className="nav-column-link">
               Skills
-            </a>
-          </div>
-          <div>
-            <a href="/services" className="nav-column-link">
-              Services
             </a>
           </div>
           <div>
