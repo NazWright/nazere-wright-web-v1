@@ -19,8 +19,11 @@ export default function ProgressBar({
   const [dropDownClicked, setDropDownClicked] = useState(false);
   const deviceType = useSelector((state) => state.control.deviceType);
 
-  useEffect(async () => {
-    setValue(percentageFill);
+  useEffect(() => {
+    async function initializeValues() {
+      setValue(percentageFill);
+    }
+    initializeValues();
   });
 
   const handleDropDownClick = () => {

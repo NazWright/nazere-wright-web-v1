@@ -9,14 +9,15 @@ export default function SingleProject({
   projectLink,
   projectGithub,
   projectImage,
+  projectAltText,
 }) {
   const deviceType = useSelector((state) => state.control.deviceType);
-  const screenHeight = useSelector((state) => state.control.screenHeight);
   const [descClicked, setDescClicked] = useState(false);
 
   const style = {
     container: {
-      width: deviceType == "mobile" || deviceType == "tablet" ? "100%" : "33%",
+      width:
+        deviceType === "mobile" || deviceType === "tablet" ? "100%" : "33%",
       textAlign: "center",
     },
     links: {
@@ -28,6 +29,7 @@ export default function SingleProject({
     return (
       <div>
         <img
+          alt={projectAltText}
           width={"100%"}
           height={deviceType === "desktop" ? 215 : undefined}
           style={{
@@ -119,9 +121,9 @@ export default function SingleProject({
         className="view-desc-project"
         style={{
           margin: "1rem",
-          height: deviceType == "desktop" ? "8vh" : "8vh",
-          width: deviceType == "desktop" ? "10vw" : "30vw",
-          fontSize: deviceType == "desktop" ? "1vw" : "2vw",
+          height: deviceType === "desktop" ? "8vh" : "8vh",
+          width: deviceType === "desktop" ? "10vw" : "30vw",
+          fontSize: deviceType === "desktop" ? "1vw" : "2vw",
         }}
         onClick={handleDescClick}
       >

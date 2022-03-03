@@ -45,13 +45,14 @@ export default function FeaturedProject() {
         <div className="row row-featured-proj">
           <div className="col">
             <img
+              alt={images.FEATPROJ.altText}
               style={{
                 height: "100%",
                 width: "100%",
                 borderRadius: 10,
                 border: "1px solid",
               }}
-              src={images.FEATPROJ}
+              src={images.FEATPROJ.link}
             />
           </div>
           <div
@@ -64,7 +65,10 @@ export default function FeaturedProject() {
           >
             <div className="card card-featured-proj">
               <div className="card-body">
-                <h4 className="card-title" style={{ color: "rgb(152,71,190)" }}>
+                <h4
+                  className="card-title"
+                  style={{ color: "rgb(158, 120, 251)" }}
+                >
                   Omnivore App Marketplace
                 </h4>
                 <p className="card-text" style={{ color: "grey" }}>

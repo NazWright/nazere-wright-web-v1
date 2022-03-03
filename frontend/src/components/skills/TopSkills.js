@@ -1,6 +1,4 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-import VideoBackground from "../videobackground/VideoBackground";
 import SkillCard from "./SkillCard";
 import "./Skills.css";
 
@@ -10,21 +8,19 @@ const skills = [
     descText: "3 Yrs",
     footerText:
       "Well-versed in creating beautiful user interfaces with HTML, CSS,and JS technologies: React, Angular, JQuery",
-    background: "linear-gradient(rgb(152,71,190), #70c3f1 99%)",
-    icon: "",
+    background: "linear-gradient(rgb(158, 120, 251), #70c3f1 99%)",
     iconColor: "rgb(241,175,12)",
     titleColor: "rgb(241,175,12)",
     icon: "fa fa-code icon",
   },
   {
     title: "Game Design & Development",
-    titleColor: "#9e78fb",
+    titleColor: "rgb(158, 120, 251)",
     iconColor: "#9e78fb",
     descText: "> 1Yr",
     footerText:
       "Experienced in designing games using an iterative, play-testing approach. Proficient with Unity game development & C#.",
-    background:
-      "linear-gradient(#f48604, rgb(243,146,6) 14%, rgb(241,175,12) 50%, rgb(238, 216, 20))",
+    background: "linear-gradient(#70c3f1, rgb(241, 175, 12) 99%)",
     icon: "fa fa-gamepad icon",
   },
   {
@@ -32,8 +28,7 @@ const skills = [
     descText: "3 Yrs",
     footerText:
       "Ample hands-on industry experience involving Wordpress web design and customizing the Wordpress CMS backend.",
-    background: "linear-gradient(rgb(152,71,190), #70c3f1 99%)",
-    icon: "",
+    background: "linear-gradient(rgb(158, 120, 251), #70c3f1 99%)",
     iconColor: "rgb(241,175,12)",
     titleColor: "rgb(241,175,12)",
     icon: "fa fa-wordpress icon",

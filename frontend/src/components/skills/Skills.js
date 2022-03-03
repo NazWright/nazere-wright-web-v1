@@ -1,12 +1,9 @@
 import React from "react";
-import ComingSoon from "../ComingSoon";
 import ProgressBar from "../progress-bar/ProgressBar";
 import { useSelector } from "react-redux";
-import { FaJava } from "react-icons/fa";
 import "./Skills.css";
 
 export default function Skills() {
-  const screenHeight = useSelector((state) => state.control.screenHeight);
   const deviceType = useSelector((state) => state.control.deviceType);
 
   const DropDownBodyTemplate = () => {

@@ -1,6 +1,5 @@
 import React from "react";
 import "./Header.css";
-import brandingGraphic from "./brandingGraphic.png";
 import { useSelector } from "react-redux";
 
 export default function Header() {

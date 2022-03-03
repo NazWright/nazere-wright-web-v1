@@ -5,7 +5,6 @@ import { Route, Routes } from "react-router-dom";
 import Projects from "./components/projects/Projects";
 import Contact from "./components/contact/Contact";
 import Skills from "./components/skills/Skills";
-import Services from "./components/servicescom/Services";
 import { useDispatch } from "react-redux";
 import { setDimensions } from "./redux/features/control/controlSlice";
 import VideoBackground from "./components/videobackground/VideoBackground";

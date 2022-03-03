@@ -1,11 +1,8 @@
 import React from "react";
-import { useSelector } from "react-redux";
 import { images } from "../../config/images";
 import SingleProject from "./SingleProject";
 
 export default function Projects() {
-  const screenHeight = useSelector((state) => state.control.screenHeight);
-  const deviceType = useSelector((state) => state.control.deviceType);
   const projects = [
     {
       projectName: "Omnivore Connect Marketplace",
