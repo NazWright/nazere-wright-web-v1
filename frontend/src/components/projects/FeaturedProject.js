@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { images } from "../../config/images";
 
 export default function FeaturedProject() {
@@ -24,21 +25,20 @@ export default function FeaturedProject() {
           </h1>
         </div>
         <div className="col">
-          <h1
-            className="display-5 text-end"
-            style={{
-              color: "rgb(243,146,6)",
-              fontSize: 20,
-              textTransform: "uppercase",
-              textDecoration: "underline",
-              cursor: "pointer",
-            }}
-            onClick={() => {
-              window.location.href = "/projects";
-            }}
-          >
-            View All Projects&gt;&gt;&gt;
-          </h1>
+          <Link to="/projects">
+            <h1
+              className="display-5 text-end"
+              style={{
+                color: "rgb(243,146,6)",
+                fontSize: 20,
+                textTransform: "uppercase",
+                textDecoration: "underline",
+                cursor: "pointer",
+              }}
+            >
+              View All Projects&gt;&gt;&gt;
+            </h1>
+          </Link>
         </div>
       </div>
       <div className="container">
@@ -52,7 +52,7 @@ export default function FeaturedProject() {
                 borderRadius: 10,
                 border: "1px solid",
               }}
-              src={images.FEATPROJ.link}
+              src={images.FEATPROJ}
             />
           </div>
           <div

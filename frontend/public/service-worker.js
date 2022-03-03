@@ -5,21 +5,24 @@ const self = this;
 
 // Install SW
 self.addEventListener("install", (event) => {
-  event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
-      console.log("Opened cache");
-
-      return cache.addAll(urlsToCache);
-    })
-  );
+  console.log("opened cache");
 });
 
 // Listen for requests
 self.addEventListener("fetch", (event) => {
   event.respondWith(
-    caches.match(event.request).then(() => {
-      return fetch(event.request).catch(() => caches.match("offline.html"));
-    })
+    fetch(event.request)
+      .then((res) => {
+        const clone = res.clone();
+        caches.open(CACHE_NAME).then((cache) => {
+          cache.put(event.request, clone);
+        });
+
+        return res;
+      })
+      .catch((error) => {
+        caches.match(event.request).then((res) => res);
+      })
   );
 });
 
@@ -39,4 +42,12 @@ self.addEventListener("activate", (event) => {
       )
     )
   );
+});
+
+self.addEventListener("push", (event) => {
+  const data = event.data.json();
+
+  self.registration.showNotification(data.title, {
+    body: "This is a test message",
+  });
 });

@@ -22,7 +22,8 @@
   },
   "homepage": "https://github.com/NazWright/nazere-wright-web-v1#readme",
   "dependencies": {
-    "express": "^4.17.2",
+    "express": "^4.17.3",
+    "web-push": "^3.4.5",
     "webpack": "^5.69.1",
     "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^4.7.4"

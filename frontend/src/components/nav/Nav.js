@@ -1,6 +1,7 @@
 import React from "react";
 import "./Nav.css";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 export default function Nav() {
   const { deviceType } = useSelector((state) => state.control);
@@ -20,12 +21,14 @@ export default function Nav() {
           deviceIsDesktop ? "" : "fluid-width"
         } col col-2 d-flex justify-content-center `}
       >
-        <img
-          height={220}
-          src="https://nxwv1images.s3.amazonaws.com/Nazere+Wright.png"
-          onClick={toHomePage}
-          style={{ cursor: "pointer" }}
-        ></img>
+        <Link to="/">
+          <img
+            height={220}
+            src="https://nxwv1images.s3.amazonaws.com/Nazere+Wright.png"
+            style={{ cursor: "pointer" }}
+            alt="home page link"
+          />
+        </Link>
       </div>
     );
   };
@@ -67,19 +70,19 @@ export default function Nav() {
         >
           {/* Nav links */}
           <div>
-            <a href="/projects" className="nav-column-link">
+            <Link to="/projects" className="nav-column-link">
               Projects
-            </a>
+            </Link>
           </div>
           <div>
-            <a href="/skills" className="nav-column-link">
+            <Link to="/skills" className="nav-column-link">
               Skills
-            </a>
+            </Link>
           </div>
           <div>
-            <a href="/contact" className="nav-column-link">
+            <Link to="/contact" className="nav-column-link">
               Contact
-            </a>
+            </Link>
           </div>
         </div>
         {/* Icons */}
