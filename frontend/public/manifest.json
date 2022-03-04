@@ -8,12 +8,12 @@
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      "src": "https://nxwv1images.s3.amazonaws.com/Nazere+Wright.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logo512.png",
+      "src": "https://nxwv1images.s3.amazonaws.com/Nazere+Wright.png",
       "type": "image/png",
       "sizes": "512x512"
     }
