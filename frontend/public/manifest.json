@@ -3,7 +3,7 @@
   "name": "Nazere Wright's Web Portfolio",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "https://nxwv1images.s3.amazonaws.com/Nazere+Wright.png",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
