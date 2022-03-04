@@ -1,6 +1,7 @@
 import React from "react";
 import "./Header.css";
 import { useSelector } from "react-redux";
+import AddToHome from "../add-to-home/AddToHome";
 
 export default function Header() {
   const { deviceType } = useSelector((state) => state.control);
@@ -15,9 +16,12 @@ export default function Header() {
   return (
     <section className="header-section">
       <div className="row d-flex justify-content-end p-t-b-30">
-        <div className="hero-branding col d-flex flex-column align-items-center">
+        <div className="hero-branding col d-flex flex-column align-items-center  mb-3">
           <h1 style={{ fontSize: deviceIsDesktop ? "4vw" : "8vw" }}>{name}</h1>
           <h2 className="tagline">{tagline}</h2>
+        </div>
+        <div className="d-flex justify-content-center">
+          <AddToHome />
         </div>
       </div>
     </section>

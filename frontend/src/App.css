@@ -105,3 +105,19 @@ body {
   letter-spacing: 1px;
   text-transform: uppercase;
 }
+
+#add-to-home {
+  color: white;
+  background: linear-gradient(rgb(152, 71, 190), rgb(12, 176, 241) 99%);
+  font-weight: bold;
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px black;
+  border: none;
+  min-width: 5vw;
+  min-height: 7vh;
+  transition: 1s ease-in-out;
+}
+
+#add-to-home:hover {
+  background: linear-gradient(rgb(12, 176, 241), rgb(152, 71, 190) 99%);
+}

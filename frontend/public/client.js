@@ -1,31 +1,45 @@
-const PUBLIC_VAPID_KEY =
-  "BNIi4HYbIShAxUIHIh70I9cMOkOUZZ4shJOcLGv6b_n28XjsQsKuzmk-kYRSUrvTWj3x-CwMzix-P5GP-LWaEpo";
-
 if ("serviceWorker" in navigator) {
-  send().catch((error) => {
-    console.error(error);
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./service-worker.js");
   });
 }
 
-async function send() {
-  const register = await navigator.serviceWorker.register(
-    "/service-worker.js",
-    {
-      scope: "/",
+// if (window.location.protocol === "http:") {
+//   const requireHTTPS = document.getElementById("requireHTTPS");
+//   const link = requireHTTPS.querySelector("a");
+//   link.href = window.location.href.replace("http://", "https://");
+//   requireHTTPS.classList.remove("hidden");
+// }
+
+window.addEventListener("beforeinstallprompt", (event) => {
+  // Prevent the mini-infobar from appearing on mobile.
+  event.preventDefault();
+  // Stash the event so it can be triggered later.
+  window.deferredPrompt = event;
+  // Remove the 'hidden' class from the install button container.
+  //divInstall.classList.toggle("hidden", false);
+});
+
+document.body.addEventListener("click", async (event) => {
+  // only if the add to home button is clicked.
+  if (event.target.id === "add-to-home") {
+    const promptEvent = window.deferredPrompt;
+    if (!promptEvent) {
+      return;
     }
-  );
+    event.target.disabled = true;
+    promptEvent.prompt();
+    const result = await promptEvent.userChoice;
+    console.log("👍", "userChoice", result);
 
-  const subscription = register.pushManager.subscribe({
-    userVisibleOnly: true,
-    applicationServerKey: PUBLIC_VAPID_KEY,
-  });
+    event.target.disabled = false;
+    window.deferredPrompt = null;
+    event.target.classList.toggle("hidden", true);
+  }
+});
 
-  await fetch("/subscribe", {
-    method: "POST",
-    body: JSON.stringify(subscription),
-    headers: {
-      "content-type": "application/json",
-    },
-  });
-  console.log("Push sent");
-}
+window.addEventListener("appinstalled", (event) => {
+  console.log("👍", "appinstalled", event);
+  // Clear the deferredPrompt so it can be garbage collected
+  window.deferredPrompt = null;
+});
