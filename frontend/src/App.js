@@ -10,6 +10,8 @@ import { setDimensions } from "./redux/features/control/controlSlice";
 import VideoBackground from "./components/videobackground/VideoBackground";
 import Nav from "./components/nav/Nav";
 import SplashScreen from "./components/splash-screen/SplashScreen";
+import AddToHome from "./components/add-to-home/AddToHome";
+import StickyBreadCrumb from "./components/sticky-breadcrumb/StickyBreadCrumb";
 
 function App() {
   const dispatch = useDispatch();
@@ -42,11 +44,13 @@ function App() {
 
   return (
     <div className="App">
+      <StickyBreadCrumb />
       <SplashScreen>
         <div>
           <VideoBackground />
         </div>
         <Nav />
+        <AddToHome />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/projects" element={<Projects />} />

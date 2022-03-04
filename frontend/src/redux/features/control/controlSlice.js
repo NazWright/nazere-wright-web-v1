@@ -4,6 +4,13 @@ const initialState = {
   screenWidth: window.innerWidth,
   screenHeight: window.innerHeight,
   deviceType: "",
+  installedStandAlone: false,
+  showInstallationBreadCrumb: false,
+  IOSstandAloneMode:
+    "standalone" in window.navigator && window.navigator.standalone,
+  isIOSDevice: /iphone|ipad|ipod/.test(
+    window.navigator.userAgent.toLowerCase()
+  ),
 };
 
 export const controlSlice = createSlice({
@@ -39,10 +46,19 @@ export const controlSlice = createSlice({
       state.screenWidth = action.payload.screenWidth || window.innerWidth;
       state.deviceType = getDeviceType();
     },
+    installStandAlone: (state, action) => {
+      console.log("show");
+      state.installedStandAlone = true;
+      state.showInstallationBreadCrumb = false;
+    },
+    showBreadCrumb: (state, action) => {
+      state.showInstallationBreadCrumb = true;
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { setDimensions } = controlSlice.actions;
+export const { setDimensions, installStandAlone, showBreadCrumb } =
+  controlSlice.actions;
 
 export default controlSlice.reducer;

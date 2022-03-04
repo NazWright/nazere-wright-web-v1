@@ -20,9 +20,7 @@ export default function Header() {
           <h1 style={{ fontSize: deviceIsDesktop ? "4vw" : "8vw" }}>{name}</h1>
           <h2 className="tagline">{tagline}</h2>
         </div>
-        <div className="d-flex justify-content-center">
-          <AddToHome />
-        </div>
+        <div className="d-flex justify-content-center"></div>
       </div>
     </section>
   );

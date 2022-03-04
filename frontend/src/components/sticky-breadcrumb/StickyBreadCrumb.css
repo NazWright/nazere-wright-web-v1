@@ -1,0 +1,15 @@
+.sticky-breadcrumb {
+  position: fixed;
+  top: 10%;
+  left: 0;
+  background: white;
+  font-weight: bold;
+  box-shadow: 3px 3px 3px black;
+  border-radius: 10px;
+  z-index: 1000;
+  height: 50px;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

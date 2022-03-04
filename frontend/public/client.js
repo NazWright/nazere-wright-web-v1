@@ -20,26 +20,26 @@ window.addEventListener("beforeinstallprompt", (event) => {
   //divInstall.classList.toggle("hidden", false);
 });
 
-document.body.addEventListener("click", async (event) => {
-  // only if the add to home button is clicked.
-  if (event.target.id === "add-to-home") {
-    const promptEvent = window.deferredPrompt;
-    if (!promptEvent) {
-      return;
-    }
-    event.target.disabled = true;
-    promptEvent.prompt();
-    const result = await promptEvent.userChoice;
-    console.log("👍", "userChoice", result);
+// document.body.addEventListener("click", async (event) => {
+//   // only if the add to home button is clicked.
+//   if (event.target.id === "add-to-home") {
+//     const promptEvent = window.deferredPrompt;
+//     if (!promptEvent) {
+//       return;
+//     }
+//     event.target.disabled = true;
+//     promptEvent.prompt();
+//     const result = await promptEvent.userChoice;
+//     console.log("👍", "userChoice", result);
 
-    event.target.disabled = false;
-    window.deferredPrompt = null;
-    event.target.classList.toggle("hidden", true);
-  }
-});
+//     event.target.disabled = false;
+//     window.deferredPrompt = null;
+//     event.target.classList.toggle("hidden", true);
+//   }
+// });
 
-window.addEventListener("appinstalled", (event) => {
-  console.log("👍", "appinstalled", event);
-  // Clear the deferredPrompt so it can be garbage collected
-  window.deferredPrompt = null;
-});
+// window.addEventListener("appinstalled", (event) => {
+//   console.log("👍", "appinstalled", event);
+//   // Clear the deferredPrompt so it can be garbage collected
+//   window.deferredPrompt = null;
+// });
