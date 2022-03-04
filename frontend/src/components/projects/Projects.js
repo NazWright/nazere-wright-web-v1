@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { images } from "../../config/images";
+import SplashScreen from "../splash-screen/SplashScreen";
 import SingleProject from "./SingleProject";
 
 export default function Projects() {
+  const [loading, setLoading] = useState(true);
+
   const projects = [
     {
       projectName: "Omnivore Connect Marketplace",
@@ -58,32 +61,34 @@ export default function Projects() {
   ];
 
   return (
-    <div
-      className="overlay"
-      style={{
-        textAlign: "center",
-      }}
-    >
-      <h2
+    <SplashScreen>
+      <div
+        className="overlay"
         style={{
-          color: "white",
-          paddingTop: 40,
-          letterSpacing: "2px",
-          textTransform: "uppercase",
+          textAlign: "center",
         }}
       >
-        {" "}
-        Projects{" "}
-      </h2>
+        <h2
+          style={{
+            color: "white",
+            paddingTop: 40,
+            letterSpacing: "2px",
+            textTransform: "uppercase",
+          }}
+        >
+          {" "}
+          Projects{" "}
+        </h2>
 
-      <div
-        className="project-container display-flex justify-content-s-a"
-        style={{ marginTop: "2rem", padding: "1rem" }}
-      >
-        {projects.map((project) => {
-          return <SingleProject {...project} key={project.projectName} />;
-        })}
+        <div
+          className="project-container display-flex justify-content-s-a"
+          style={{ marginTop: "2rem", padding: "1rem" }}
+        >
+          {projects.map((project) => {
+            return <SingleProject {...project} key={project.projectName} />;
+          })}
+        </div>
       </div>
-    </div>
+    </SplashScreen>
   );
 }

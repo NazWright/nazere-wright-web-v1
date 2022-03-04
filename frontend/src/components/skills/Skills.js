@@ -2,6 +2,7 @@ import React from "react";
 import ProgressBar from "../progress-bar/ProgressBar";
 import { useSelector } from "react-redux";
 import "./Skills.css";
+import SplashScreen from "../splash-screen/SplashScreen";
 
 export default function Skills() {
   const deviceType = useSelector((state) => state.control.deviceType);
@@ -36,78 +37,80 @@ export default function Skills() {
   };
 
   return (
-    <div
-      style={{ overflow: "hidden", padding: "3rem" }}
-      className={`${
-        deviceType === "desktop" ? "flex-row flex-wrap" : "flex-column"
-      } d-flex justify-space-around`}
-      id="bg-video-wrapper"
-    >
-      <div className="fluid-width text-center">
-        <h2
-          className="skills-header mb-5"
-          style={{
-            fontSize: deviceType === "desktop" ? "3vw" : "6vw",
-          }}
-        >
-          Skills
-        </h2>
-      </div>
+    <SplashScreen>
       <div
+        style={{ overflow: "hidden", padding: "3rem" }}
         className={`${
-          deviceType === "desktop" ? "flex-row" : "flex-column"
-        } row fluid-width`}
+          deviceType === "desktop" ? "flex-row flex-wrap" : "flex-column"
+        } d-flex justify-space-around`}
+        id="bg-video-wrapper"
       >
-        <div
-          className="col-6 justify-content-center"
-          style={{ width: deviceType === "desktop" ? undefined : "100%" }}
-        >
-          <ProgressBar
-            percentageFill={85}
-            backgroundColor="rgb(241, 175, 12)"
-            label={"Front-end Development"}
-            unit={"Proficiency"}
-            dropDownBody={<DropDownBodyTemplate />}
-            dropDownHeader={
-              <DropDowHeaderTemplate text={"Front-end Development"} />
-            }
-            showValue={true}
-          />
-          <ProgressBar
-            percentageFill={75}
-            backgroundColor="rgb(12, 176, 241)"
-            label={"Back-end Development"}
-            unit={"Proficiency"}
-            showValue={true}
-          />
-          <ProgressBar
-            percentageFill={75}
-            backgroundColor="rgb(152, 71, 190)"
-            label={"REST APIs"}
-            unit={"Proficiency"}
-            showValue={true}
-          />
+        <div className="fluid-width text-center">
+          <h2
+            className="skills-header mb-5"
+            style={{
+              fontSize: deviceType === "desktop" ? "3vw" : "6vw",
+            }}
+          >
+            Skills
+          </h2>
         </div>
         <div
-          className="col-6 justify-content-center"
-          style={{ width: deviceType === "desktop" ? undefined : "100%" }}
+          className={`${
+            deviceType === "desktop" ? "flex-row" : "flex-column"
+          } row fluid-width`}
         >
-          <ProgressBar
-            percentageFill={50}
-            backgroundColor="#9e78fb"
-            label={"Mobile App Development"}
-            unit={"Proficiency"}
-            showValue={true}
-          />
-          <ProgressBar
-            percentageFill={40}
-            backgroundColor="pink"
-            label={"Game Development"}
-            unit={"Proficiency"}
-            showValue={true}
-          />
+          <div
+            className="col-6 justify-content-center"
+            style={{ width: deviceType === "desktop" ? undefined : "100%" }}
+          >
+            <ProgressBar
+              percentageFill={85}
+              backgroundColor="rgb(241, 175, 12)"
+              label={"Front-end Development"}
+              unit={"Proficiency"}
+              dropDownBody={<DropDownBodyTemplate />}
+              dropDownHeader={
+                <DropDowHeaderTemplate text={"Front-end Development"} />
+              }
+              showValue={true}
+            />
+            <ProgressBar
+              percentageFill={75}
+              backgroundColor="rgb(12, 176, 241)"
+              label={"Back-end Development"}
+              unit={"Proficiency"}
+              showValue={true}
+            />
+            <ProgressBar
+              percentageFill={75}
+              backgroundColor="rgb(152, 71, 190)"
+              label={"REST APIs"}
+              unit={"Proficiency"}
+              showValue={true}
+            />
+          </div>
+          <div
+            className="col-6 justify-content-center"
+            style={{ width: deviceType === "desktop" ? undefined : "100%" }}
+          >
+            <ProgressBar
+              percentageFill={50}
+              backgroundColor="#9e78fb"
+              label={"Mobile App Development"}
+              unit={"Proficiency"}
+              showValue={true}
+            />
+            <ProgressBar
+              percentageFill={40}
+              backgroundColor="pink"
+              label={"Game Development"}
+              unit={"Proficiency"}
+              showValue={true}
+            />
+          </div>
         </div>
       </div>
-    </div>
+    </SplashScreen>
   );
 }

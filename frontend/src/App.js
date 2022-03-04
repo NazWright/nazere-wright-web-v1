@@ -9,8 +9,9 @@ import { useDispatch } from "react-redux";
 import { setDimensions } from "./redux/features/control/controlSlice";
 import VideoBackground from "./components/videobackground/VideoBackground";
 import Nav from "./components/nav/Nav";
+import SplashScreen from "./components/splash-screen/SplashScreen";
 
-export default function App() {
+function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -37,18 +38,24 @@ export default function App() {
     };
   }, [dispatch]);
 
+  console.log("updated");
+
   return (
     <div className="App">
-      <div>
-        <VideoBackground />
-      </div>
-      <Nav />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/skills" element={<Skills />} />
-      </Routes>
+      <SplashScreen>
+        <div>
+          <VideoBackground />
+        </div>
+        <Nav />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/skills" element={<Skills />} />
+        </Routes>
+      </SplashScreen>
     </div>
   );
 }
+
+export default App;

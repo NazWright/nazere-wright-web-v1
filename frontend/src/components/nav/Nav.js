@@ -1,52 +1,122 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Nav.css";
-import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import {
+  clickLink,
+  getLinks,
+} from "../../redux/features/navigation/navigationSlice";
 
 export default function Nav() {
   const { deviceType } = useSelector((state) => state.control);
 
   const deviceIsDesktop = deviceType === "desktop" ? true : false;
 
-  const onHomePage = window.location.pathname === "/" ? true : false;
+  const dispatch = useDispatch();
 
-  const toHomePage = () => {
-    window.location.href = "/";
-  };
+  const links = useSelector((state) => state.navigation.links) || [];
 
-  const HomePageLink = () => {
+  useEffect(() => {
+    let navigationLinks = [
+      {
+        path: "/projects",
+        clicked: false,
+        className: "nav-column-link",
+        imageLink: false,
+        image: "",
+        linkText: "Projects",
+      },
+      {
+        path: "/skills",
+        clicked: false,
+        className: "nav-column-link",
+        imageLink: false,
+        image: "",
+        linkText: "Skills",
+      },
+      {
+        path: "/contact",
+        clicked: false,
+        className: "nav-column-link",
+        imageLink: false,
+        image: "",
+        linkText: "Contact",
+      },
+      {
+        path: "/",
+        clicked: false,
+        className: "nav-column-link",
+        imageLink: true,
+        image: "https://nxwv1images.s3.amazonaws.com/Nazere+Wright.png",
+        linkText: "",
+      },
+    ];
+
+    dispatch(getLinks(navigationLinks));
+  }, [dispatch]);
+
+  const HomePageLink = ({ link }) => {
+    const navigate = useNavigate();
+    const handleLinkClick = () => {
+      dispatch(clickLink(link));
+      navigate(link.path);
+      console.log("hello");
+    };
+
     return (
       <div
         className={`${
           deviceIsDesktop ? "" : "fluid-width"
         } col col-2 d-flex justify-content-center `}
       >
-        <Link to="/">
+        <div onClick={() => handleLinkClick(link)}>
           <img
             height={220}
-            src="https://nxwv1images.s3.amazonaws.com/Nazere+Wright.png"
+            src={link.imageLink && link.image ? link.image : undefined}
             style={{ cursor: "pointer" }}
             alt="home page link"
           />
-        </Link>
+        </div>
       </div>
     );
   };
 
-  const changeBackground = () => {
-    var header = document.querySelector("top");
+  const NavigationGroup = ({ links, history }) => {
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
 
-    window.onscroll = function () {
-      //TOP
-      if (header.getBoundingClientRect().top <= 0) {
-        console.log("TRIGGER: top of div reached.");
-      }
-      //BOTTOM
-      if (header.getBoundingClientRect().bottom <= 0) {
-        header.style.background = "red";
-        console.log("bottom");
-      }
+    const navylinks = useSelector((state) => state.navigation.links) || [];
+
+    const handleLinkClick = (link) => {
+      dispatch(clickLink(link));
+      navigate(link.path);
+      console.log(navylinks);
+      console.log("hello");
     };
+
+    return (
+      <div
+        className="col nav-column mb-2"
+        style={{
+          padding: "1rem",
+        }}
+      >
+        {/* Nav links */}
+        {links &&
+          links.map((link) => {
+            return (
+              <div>
+                <div
+                  className={link.className}
+                  onClick={() => handleLinkClick(link)}
+                >
+                  {link.linkText}
+                </div>
+              </div>
+            );
+          })}
+      </div>
+    );
   };
 
   return (
@@ -60,31 +130,16 @@ export default function Nav() {
           deviceIsDesktop ? "flex-row flex-wrap" : "flex-column"
         } row navigation align-items-center`}
       >
-        <HomePageLink />
-
-        <div
-          className="col nav-column mb-2"
-          style={{
-            padding: "1rem",
-          }}
-        >
-          {/* Nav links */}
-          <div>
-            <Link to="/projects" className="nav-column-link">
-              Projects
-            </Link>
-          </div>
-          <div>
-            <Link to="/skills" className="nav-column-link">
-              Skills
-            </Link>
-          </div>
-          <div>
-            <Link to="/contact" className="nav-column-link">
-              Contact
-            </Link>
-          </div>
-        </div>
+        {links.length > 1
+          ? [
+              <HomePageLink
+                link={links.filter((link) => link.path === "/")[0]}
+              />,
+              <NavigationGroup
+                links={links.filter((link) => link.path !== "/")}
+              />,
+            ]
+          : undefined}
         {/* Icons */}
         <div className={`${deviceIsDesktop ? "col-2" : ""} col icons-nav`}>
           <div
