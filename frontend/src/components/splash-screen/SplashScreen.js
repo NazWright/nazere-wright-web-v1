@@ -3,7 +3,7 @@ import "./SplashScreen.css";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleSplashScreen } from "../../redux/features/control/controlSlice";
 
-export default function SplashScreen({ children }) {
+export default function SplashScreen({ children, splashContent }) {
   const { showSplashScreen } = useSelector((state) => state.control);
   const dispatch = useDispatch();
 
@@ -25,14 +25,9 @@ export default function SplashScreen({ children }) {
     };
   });
 
-  return <div>{!showSplashScreen ? children : LoadingMessage()}</div>;
-}
+  function LoadingMessage() {
+    return <div className="splash-screen">{splashContent}</div>;
+  }
 
-function LoadingMessage() {
-  return (
-    <div className="splash-screen align-items-center">
-      Loading APP....
-      <div className="loading-dot">.</div>
-    </div>
-  );
+  return <div>{!showSplashScreen ? children : LoadingMessage()}</div>;
 }

@@ -14,6 +14,7 @@ export default function ProgressBar({
   dropDownHeader,
   dropDownBody,
   showValue,
+  width,
 }) {
   const [value, setValue] = useState(0);
   const [dropDownClicked, setDropDownClicked] = useState(false);
@@ -32,7 +33,7 @@ export default function ProgressBar({
 
   const DropDownContent = () => {
     return (
-      <div className="card">
+      <div className="card" style={{ width: width }}>
         <div className="card-header">{dropDownHeader && dropDownHeader}</div>
         <div className="card-body">{dropDownBody && dropDownBody}</div>
       </div>

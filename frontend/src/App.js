@@ -12,6 +12,7 @@ import Nav from "./components/nav/Nav";
 import SplashScreen from "./components/splash-screen/SplashScreen";
 import AddToHome from "./components/add-to-home/AddToHome";
 import StickyBreadCrumb from "./components/sticky-breadcrumb/StickyBreadCrumb";
+import SplashScreenContent from "./components/nw-splash-screen-content/SplashScreenContent";
 
 function App() {
   const dispatch = useDispatch();
@@ -48,9 +49,11 @@ function App() {
         <button className="add-to-home">Add Application to Desktop</button>
       </StickyBreadCrumb>
 
-      <SplashScreen>
+      <SplashScreen splashContent={<SplashScreenContent />}>
         <div>
-          <VideoBackground />
+          <VideoBackground
+            src={"https://nxwv1images.s3.amazonaws.com/codingvidres.mp4"}
+          />
         </div>
         <Nav />
         <AddToHome />
