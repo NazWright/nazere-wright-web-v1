@@ -26,7 +26,10 @@ export default function Slider({ children }) {
               >
                 <h4
                   className="text-center card-title"
-                  style={{ color: "#9e78fb" }}
+                  style={{
+                    color: "#9e78fb",
+                    font: "bold normal normal 1.5rem/1 FontAwesome",
+                  }}
                 >
                   Web Development
                 </h4>

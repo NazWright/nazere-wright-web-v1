@@ -67,7 +67,10 @@ export default function FeaturedProject() {
               <div className="card-body">
                 <h4
                   className="card-title"
-                  style={{ color: "rgb(158, 120, 251)" }}
+                  style={{
+                    color: "rgb(158, 120, 251)",
+                    font: "bold normal normal 1.5rem/1 FontAwesome",
+                  }}
                 >
                   Omnivore App Marketplace
                 </h4>

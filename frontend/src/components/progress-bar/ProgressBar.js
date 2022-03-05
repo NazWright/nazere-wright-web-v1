@@ -47,7 +47,9 @@ export default function ProgressBar({
           color: "white",
           fontWeight: "bold",
           letterSpacing: "1px",
-          fontSize: deviceType === "desktop" ? "2vw" : "2.5vw",
+          font: `bold normal normal ${
+            deviceType === "desktop" ? "2vw" : "2.5vw"
+          }/1 FontAwesome`,
         }}
       >
         {label}

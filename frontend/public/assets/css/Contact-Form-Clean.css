@@ -4,7 +4,7 @@
   overflow-x: scroll;
 }
 
-@media (max-width:767px) {
+@media (max-width: 767px) {
   .contact-clean {
     padding: 20px 0;
     /*overflow-y: scroll;*/
@@ -19,10 +19,10 @@
   padding: 40px;
   border-radius: 4px;
   color: #505e6c;
-  box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
 }
 
-@media (max-width:767px) {
+@media (max-width: 767px) {
   .contact-clean form {
     padding: 30px;
   }
@@ -39,7 +39,7 @@
 .contact-clean form .form-control {
   background: #fff;
   border-radius: 2px;
-  box-shadow: 1px 1px 1px rgba(0,0,0,0.05);
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.05);
   outline: none;
   color: inherit;
   padding-left: 12px;
@@ -296,7 +296,7 @@ div {
 
 .tagline {
   color: white;
-  font-size: 2rem;
+  font: bold normal normal 2rem/1 FontAwesome;
 }
 
 @media (max-width: 992px) {
@@ -327,4 +327,3 @@ div {
   /*z-index: -1;*/
   /*padding: 150px;*/
 }
-
