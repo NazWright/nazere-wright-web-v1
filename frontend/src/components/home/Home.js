@@ -5,7 +5,7 @@ import FeaturedProject from "../projects/FeaturedProject";
 import AboutMe from "../aboutme/AboutMe";
 import SplashScreen from "../splash-screen/SplashScreen";
 
-export default function Home() {
+export default function Home({ control }) {
   return (
     <SplashScreen>
       <div id="bg-video-wrapper" style={{ overflow: "hidden" }}>

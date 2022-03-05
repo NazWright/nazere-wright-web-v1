@@ -50,7 +50,6 @@ export const controlSlice = createSlice({
       state.deviceType = getDeviceType();
     },
     installStandAlone: (state, action) => {
-      console.log("show");
       state.installedStandAlone = true;
       state.showInstallationBreadCrumb = false;
     },
@@ -59,7 +58,6 @@ export const controlSlice = createSlice({
     },
     toggleSplashScreen: (state, action) => {
       state.showSplashScreen = action.payload;
-      console.log("ran");
     },
   },
 });
