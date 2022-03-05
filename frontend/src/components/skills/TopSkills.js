@@ -14,14 +14,14 @@ const skills = [
     icon: "fa fa-code icon",
   },
   {
-    title: "Game Design & Development",
+    title: "API Development",
     titleColor: "rgb(158, 120, 251)",
     iconColor: "#9e78fb",
-    descText: "> 1Yr",
+    descText: "2 yrs",
     footerText:
-      "Experienced in designing games using an iterative, play-testing approach. Proficient with Unity game development & C#.",
+      "Experienced in designing and developing performant, secure, cutting-edge APIs in Node.js & Java",
     background: "linear-gradient(#70c3f1, rgb(241, 175, 12) 99%)",
-    icon: "fa fa-gamepad icon",
+    icon: "fa fa-wifi icon",
   },
   {
     title: "Responsive Wordpress Web Design",
@@ -43,7 +43,10 @@ export default function TopSkills() {
           className="d-flex justify-content-center"
           style={{ width: "100%" }}
         >
-          <h1 className="display-5 text-center intro-heading"> Top Skills </h1>
+          <h1 className="display-5 text-center intro-heading">
+            {" "}
+            Top Services{" "}
+          </h1>
         </div>
         <div className="row features d-flex justify-content-center flex-row">
           {skills.map((skill) => {

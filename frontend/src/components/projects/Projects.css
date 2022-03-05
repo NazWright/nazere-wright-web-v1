@@ -1,0 +1,8 @@
+@keyframes slide-in-card {
+  from {
+    right: -600px;
+  }
+  to {
+    right: 100px;
+  }
+}

@@ -17,7 +17,7 @@ export default function SingleProject({
   const style = {
     container: {
       width:
-        deviceType === "mobile" || deviceType === "tablet" ? "100%" : "33%",
+        deviceType === "mobile" || deviceType === "tablet" ? "100%" : "40%",
       textAlign: "center",
     },
     links: {
@@ -31,7 +31,7 @@ export default function SingleProject({
         <img
           alt={projectAltText}
           width={"100%"}
-          height={deviceType === "desktop" ? 215 : undefined}
+          height={deviceType === "desktop" ? 300 : undefined}
           style={{
             borderRadius: "10px",
             border: "1px solid black",
