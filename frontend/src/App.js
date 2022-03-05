@@ -44,7 +44,10 @@ function App() {
 
   return (
     <div className="App">
-      <StickyBreadCrumb />
+      <StickyBreadCrumb>
+        <button className="add-to-home">Add Application to Desktop</button>
+      </StickyBreadCrumb>
+
       <SplashScreen>
         <div>
           <VideoBackground />

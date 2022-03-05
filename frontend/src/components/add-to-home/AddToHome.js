@@ -4,6 +4,7 @@ import { installStandAlone } from "../../redux/features/control/controlSlice";
 import IOSModalContent from "../install-pwa-modal/IOSModalContent";
 import ModalContent from "../install-pwa-modal/ModalContent";
 import NwModal from "../install-pwa-modal/nwModal";
+import { useCookies } from "react-cookie";
 
 // container element that handles closing of the modal.
 
@@ -12,9 +13,10 @@ export default function AddToHome() {
   // only show this component on the desktop. This button is not compatible on mobile
   const [showInstallMessage, setShowInstallMessage] = useState(false);
   const [closed, setClosed] = useState(false);
-  const { deviceType, IOSstandAloneMode, isIOSDevice } = useSelector(
-    (state) => state.control
-  );
+  const [cookies, setCookie] = useCookies(["installedStandAlone"]);
+
+  const { deviceType, IOSstandAloneMode, isIOSDevice, installedStandAlone } =
+    useSelector((state) => state.control);
 
   const onDesktop = deviceType === "desktop";
 
@@ -26,6 +28,11 @@ export default function AddToHome() {
   version of this portfolio`;
 
   useEffect(() => {
+    function handleCookie() {
+      setCookie("installedStandAlone", true, {
+        path: "/",
+      });
+    }
     // wait 1 second before showing the install message modal
     async function showInstallMessageModal() {
       try {
@@ -40,7 +47,7 @@ export default function AddToHome() {
 
     document.body.addEventListener("click", async (event) => {
       // only if the add to home button is clicked.
-      if (event.target.id === "add-to-home") {
+      if (event.target.classList.contains("add-to-home")) {
         const promptEvent = window.deferredPrompt;
         if (!promptEvent) {
           return;
@@ -56,6 +63,7 @@ export default function AddToHome() {
     window.addEventListener("appinstalled", (event) => {
       dispatch(installStandAlone());
       handleClose();
+      handleCookie();
       window.deferredPrompt = null;
     });
 
@@ -64,7 +72,7 @@ export default function AddToHome() {
       showInstallMessageModal();
     }
     // add cleanup
-  }, [dispatch, IOSstandAloneMode]);
+  }, [dispatch, IOSstandAloneMode, setCookie]);
 
   const handleClose = () => {
     setClosed(true);
@@ -81,7 +89,7 @@ export default function AddToHome() {
         width: "100%",
       }}
     >
-      {showInstallMessage ? (
+      {showInstallMessage && !installedStandAlone ? (
         <NwModal
           handleClose={handleClose}
           title={`Installing ${

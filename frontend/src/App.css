@@ -106,7 +106,7 @@ body {
   text-transform: uppercase;
 }
 
-#add-to-home {
+.add-to-home {
   color: white;
   background: linear-gradient(rgb(152, 71, 190), rgb(12, 176, 241) 99%);
   font-weight: bold;
@@ -118,6 +118,6 @@ body {
   transition: 1s ease-in-out;
 }
 
-#add-to-home:hover {
+.add-to-home:hover {
   background: linear-gradient(rgb(12, 176, 241), rgb(152, 71, 190) 99%);
 }

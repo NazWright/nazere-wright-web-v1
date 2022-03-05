@@ -1,16 +1,19 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { getCookie } from "../../../utils/getCookie";
+import { parseBool } from "../../../utils/parseBool";
 
 const initialState = {
   screenWidth: window.innerWidth,
   screenHeight: window.innerHeight,
   deviceType: "",
-  installedStandAlone: false,
+  installedStandAlone: parseBool(getCookie("installedStandAlone")) || false,
   showInstallationBreadCrumb: false,
   IOSstandAloneMode:
     "standalone" in window.navigator && window.navigator.standalone,
   isIOSDevice: /iphone|ipad|ipod/.test(
     window.navigator.userAgent.toLowerCase()
   ),
+  showSplashScreen: true,
 };
 
 export const controlSlice = createSlice({
@@ -54,11 +57,19 @@ export const controlSlice = createSlice({
     showBreadCrumb: (state, action) => {
       state.showInstallationBreadCrumb = true;
     },
+    toggleSplashScreen: (state, action) => {
+      state.showSplashScreen = action.payload;
+      console.log("ran");
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { setDimensions, installStandAlone, showBreadCrumb } =
-  controlSlice.actions;
+export const {
+  setDimensions,
+  installStandAlone,
+  showBreadCrumb,
+  toggleSplashScreen,
+} = controlSlice.actions;
 
 export default controlSlice.reducer;

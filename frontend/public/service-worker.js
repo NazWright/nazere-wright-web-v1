@@ -51,3 +51,9 @@ self.addEventListener("push", (event) => {
     body: "This is a test message",
   });
 });
+
+self.addEventListener("uninstall", (event) => {
+  // cookie is false
+  console.log("uninstall event fired!!");
+  document.cookie = "installedStandAlone=false";
+});

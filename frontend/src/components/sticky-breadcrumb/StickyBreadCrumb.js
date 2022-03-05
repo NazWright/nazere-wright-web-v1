@@ -3,13 +3,12 @@ import "./StickyBreadCrumb.css";
 import { useSelector } from "react-redux";
 
 export default function StickyBreadCrumb({ children }) {
-  const { installedStandAlone, IOSstandAloneMode } = useSelector(
-    (state) => state.control
-  );
+  const { installedStandAlone, IOSstandAloneMode, showSplashScreen } =
+    useSelector((state) => state.control);
 
   return (
     <div>
-      {!installedStandAlone && !IOSstandAloneMode ? (
+      {!installedStandAlone && !IOSstandAloneMode && !showSplashScreen ? (
         <div className="sticky-breadcrumb">
           {" "}
           {children || "Sticky BreadCrumb"}{" "}

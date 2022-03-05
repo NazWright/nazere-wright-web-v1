@@ -6,6 +6,7 @@ import {
   clickLink,
   getLinks,
 } from "../../redux/features/navigation/navigationSlice";
+import { toggleSplashScreen } from "../../redux/features/control/controlSlice";
 
 export default function Nav() {
   const { deviceType } = useSelector((state) => state.control);
@@ -58,7 +59,7 @@ export default function Nav() {
   const HomePageLink = ({ link }) => {
     const navigate = useNavigate();
     const handleLinkClick = () => {
-      dispatch(clickLink(link));
+      dispatch(toggleSplashScreen(true));
       navigate(link.path);
       console.log("hello");
     };
@@ -81,17 +82,13 @@ export default function Nav() {
     );
   };
 
-  const NavigationGroup = ({ links, history }) => {
+  const NavigationGroup = ({ links }) => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    const navylinks = useSelector((state) => state.navigation.links) || [];
-
     const handleLinkClick = (link) => {
-      dispatch(clickLink(link));
+      dispatch(toggleSplashScreen(true));
       navigate(link.path);
-      console.log(navylinks);
-      console.log("hello");
     };
 
     return (
@@ -105,7 +102,7 @@ export default function Nav() {
         {links &&
           links.map((link) => {
             return (
-              <div>
+              <div key={link.path}>
                 <div
                   className={link.className}
                   onClick={() => handleLinkClick(link)}
