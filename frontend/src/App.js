@@ -5,7 +5,7 @@ import { Route, Routes } from "react-router-dom";
 import Projects from "./components/projects/Projects";
 import Contact from "./components/contact/Contact";
 import Skills from "./components/skills/Skills";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { setDimensions } from "./redux/features/control/controlSlice";
 import VideoBackground from "./components/videobackground/VideoBackground";
 import Nav from "./components/nav/Nav";
@@ -14,14 +14,15 @@ import AddToHome from "./components/add-to-home/AddToHome";
 import StickyBreadCrumb from "./components/sticky-breadcrumb/StickyBreadCrumb";
 import SplashScreenContent from "./components/nw-splash-screen-content/SplashScreenContent";
 
+import { useDeviceInfo } from "./hooks/useDeviceInfo";
+
 function App() {
   const dispatch = useDispatch();
-  const { deviceType } = useSelector((state) => state.control);
+  const { deviceIsDesktop } = useDeviceInfo();
 
   useEffect(() => {
     const handleScreenResize = () => {
       const hasWindow = typeof window !== "undefined";
-      console.log(window.innerWidth);
       dispatch(
         setDimensions({
           payload: {
@@ -46,7 +47,7 @@ function App() {
 
   return (
     <div className="App">
-      {deviceType === "desktop" && (
+      {deviceIsDesktop && (
         <StickyBreadCrumb>
           <button className="add-to-home">Add Application to Desktop</button>
         </StickyBreadCrumb>

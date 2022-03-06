@@ -1,9 +1,21 @@
 // require in dependencies ... express, etc.
 const express = require("express");
 const webPush = require("web-push");
+const mongoose = require("mongoose");
+const keys = require("./config/keys");
+
+require("./models");
+const projectController = require("./controller/projectController")(mongoose);
+
+if (process.env.NODE_ENV !== "test") {
+  mongoose.connect(keys.mongoURI, () => {
+    console.log("connected");
+  });
+}
 
 // initialize server here
 const app = express();
+require("./api")(app);
 const PUBLIC_VAPID_KEY =
   "BNIi4HYbIShAxUIHIh70I9cMOkOUZZ4shJOcLGv6b_n28XjsQsKuzmk-kYRSUrvTWj3x-CwMzix-P5GP-LWaEpo";
 const PRIVATE_VAPID_KEY = "usZBqkFBmIiKzo7FxVRUVUYAY_DJOqY7NR4QtJfuKOM";
@@ -37,6 +49,8 @@ app.post("/subscribe", (req, res) => {
     .sendNotification(subscription, payload)
     .catch((error) => console.error(error));
 });
+
+app.get("/create", projectController.createProject);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log("Listening"));

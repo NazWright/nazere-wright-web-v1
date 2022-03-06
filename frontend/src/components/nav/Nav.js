@@ -1,12 +1,13 @@
 import React, { useEffect } from "react";
 import "./Nav.css";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
-import {
-  clickLink,
-  getLinks,
-} from "../../redux/features/navigation/navigationSlice";
+import { getLinks } from "../../redux/features/navigation/navigationSlice";
+import { navigationLinks } from "../../constants/navigationLinks";
+import NavigationGroup from "./NavigationGroup";
+import HomePageLink from "./HomePageLink";
+import { useNavigate } from "react-router-dom";
 import { toggleSplashScreen } from "../../redux/features/control/controlSlice";
+import { navigateTo } from "../../utils/navigateTo";
 
 export default function Nav() {
   const { deviceType } = useSelector((state) => state.control);
@@ -15,106 +16,18 @@ export default function Nav() {
 
   const dispatch = useDispatch();
 
+  const navigate = useNavigate();
+
   const links = useSelector((state) => state.navigation.links) || [];
 
-  useEffect(() => {
-    let navigationLinks = [
-      {
-        path: "/projects",
-        clicked: false,
-        className: "nav-column-link",
-        imageLink: false,
-        image: "",
-        linkText: "Projects",
-      },
-      {
-        path: "/skills",
-        clicked: false,
-        className: "nav-column-link",
-        imageLink: false,
-        image: "",
-        linkText: "Skills",
-      },
-      {
-        path: "/contact",
-        clicked: false,
-        className: "nav-column-link",
-        imageLink: false,
-        image: "",
-        linkText: "Contact",
-      },
-      {
-        path: "/",
-        clicked: false,
-        className: "nav-column-link",
-        imageLink: true,
-        image: "https://nxwv1images.s3.amazonaws.com/Nazere+Wright.png",
-        linkText: "",
-      },
-    ];
+  const handleLinkClick = (link) => {
+    dispatch(toggleSplashScreen(true));
+    navigate(link.path);
+  };
 
+  useEffect(() => {
     dispatch(getLinks(navigationLinks));
   }, [dispatch]);
-
-  const HomePageLink = ({ link }) => {
-    const navigate = useNavigate();
-    const handleLinkClick = () => {
-      dispatch(toggleSplashScreen(true));
-      navigate(link.path);
-      console.log("hello");
-    };
-
-    return (
-      <div
-        className={`${
-          deviceIsDesktop ? "" : "fluid-width"
-        } col col-2 d-flex justify-content-center `}
-      >
-        <div onClick={() => handleLinkClick(link)}>
-          <img
-            height={220}
-            src={link.imageLink && link.image ? link.image : undefined}
-            style={{ cursor: "pointer" }}
-            alt="home page link"
-          />
-        </div>
-      </div>
-    );
-  };
-
-  const NavigationGroup = ({ links }) => {
-    const dispatch = useDispatch();
-    const navigate = useNavigate();
-
-    const handleLinkClick = (link) => {
-      dispatch(toggleSplashScreen(true));
-      navigate(link.path);
-    };
-
-    return (
-      <div
-        className="col nav-column mb-2"
-        style={{
-          padding: "1rem",
-        }}
-      >
-        {/* Nav links */}
-        {links &&
-          links.map((link) => {
-            return (
-              <div key={link.path}>
-                <div
-                  className={link.className}
-                  onClick={() => handleLinkClick(link)}
-                >
-                  {link.linkText}
-                </div>
-              </div>
-            );
-          })}
-      </div>
-    );
-  };
 
   return (
     <section
@@ -131,9 +44,11 @@ export default function Nav() {
           ? [
               <HomePageLink
                 link={links.filter((link) => link.path === "/")[0]}
+                handleLinkClick={handleLinkClick}
               />,
               <NavigationGroup
                 links={links.filter((link) => link.path !== "/")}
+                handleLinkClick={handleLinkClick}
               />,
             ]
           : undefined}
@@ -141,10 +56,9 @@ export default function Nav() {
         <div className={`${deviceIsDesktop ? "col-2" : ""} col icons-nav`}>
           <div
             className="icon-container"
-            onClick={() => {
-              window.location.href =
-                "https://www.instagram.com/nazwrightthedeveloper/";
-            }}
+            onClick={() =>
+              navigateTo("https://www.instagram.com/nazwrightthedeveloper/")
+            }
             style={{
               cursor: "pointer",
             }}
@@ -153,9 +67,7 @@ export default function Nav() {
           </div>
           <div
             className="icon-container"
-            onClick={() => {
-              window.location.href = "https://github.com/NazWright";
-            }}
+            onClick={() => navigateTo("https://github.com/NazWright")}
             style={{
               cursor: "pointer",
             }}
@@ -164,10 +76,9 @@ export default function Nav() {
           </div>
           <div
             className="icon-container"
-            onClick={() => {
-              window.location.href =
-                "https://www.linkedin.com/in/nazere-wright-b486b0172/";
-            }}
+            onClick={() =>
+              navigateTo("https://www.linkedin.com/in/nazere-wright-b486b0172/")
+            }
             style={{
               cursor: "pointer",
             }}
