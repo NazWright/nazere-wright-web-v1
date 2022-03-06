@@ -15,6 +15,7 @@ export default function ProgressBar({
   dropDownBody,
   showValue,
   width,
+  animationDelay,
 }) {
   const [value, setValue] = useState(0);
   const [dropDownClicked, setDropDownClicked] = useState(false);
@@ -22,7 +23,13 @@ export default function ProgressBar({
 
   useEffect(() => {
     async function initializeValues() {
-      setValue(percentageFill);
+      try {
+        setTimeout(() => {
+          setValue(percentageFill);
+        }, animationDelay);
+      } catch (error) {
+        setValue(percentageFill);
+      }
     }
     initializeValues();
   });

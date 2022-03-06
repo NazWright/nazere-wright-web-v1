@@ -36,6 +36,8 @@ export default function Skills() {
     );
   };
 
+  const animationDelay = 150;
+
   return (
     <SplashScreen>
       <div
@@ -74,6 +76,7 @@ export default function Skills() {
                 <DropDowHeaderTemplate text={"Front-end Development"} />
               }
               showValue={true}
+              animationDelay={animationDelay}
             />
             <ProgressBar
               percentageFill={75}
@@ -81,6 +84,7 @@ export default function Skills() {
               label={"Back-end Development"}
               unit={"Proficiency"}
               showValue={true}
+              animationDelay={animationDelay}
             />
             <ProgressBar
               percentageFill={75}
@@ -88,6 +92,7 @@ export default function Skills() {
               label={"REST APIs"}
               unit={"Proficiency"}
               showValue={true}
+              animationDelay={animationDelay}
             />
           </div>
           <div
@@ -100,6 +105,7 @@ export default function Skills() {
               label={"Mobile App Development"}
               unit={"Proficiency"}
               showValue={true}
+              animationDelay={animationDelay}
             />
             <ProgressBar
               percentageFill={40}
@@ -107,6 +113,7 @@ export default function Skills() {
               label={"Game Development"}
               unit={"Proficiency"}
               showValue={true}
+              animationDelay={animationDelay}
             />
           </div>
         </div>
