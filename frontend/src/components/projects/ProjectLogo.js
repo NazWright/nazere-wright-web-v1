@@ -1,28 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 
-export default function ProjectLogo({
-  height,
-  width,
-  src,
-  alt,
-  style,
-  handleHover,
-}) {
-  const [enteredElement, setEnteredElement] = useState(false);
-
-  const handleMouseEvent = (condition) => {
-    handleHover(condition);
-  };
-
+export default function ProjectLogo({ height, width, src, alt, style }) {
   return (
-    <img
-      width={width}
-      height={height}
-      style={style}
-      src={src}
-      alt={alt}
-      onMouseEnter={() => handleMouseEvent(true)}
-      onMouseLeave={() => handleMouseEvent(false)}
-    ></img>
+    <img width={width} height={height} style={style} src={src} alt={alt}></img>
   );
 }

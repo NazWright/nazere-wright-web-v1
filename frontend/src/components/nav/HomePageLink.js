@@ -12,7 +12,7 @@ export default function HomePageLink({ link, handleLinkClick }) {
     >
       <div onClick={() => handleLinkClick(link)}>
         <img
-          height={220}
+          height={175}
           src={link.imageLink && link.image ? link.image : undefined}
           style={{ cursor: "pointer" }}
           alt="home page link"
