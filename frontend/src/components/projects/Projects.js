@@ -1,12 +1,14 @@
 import React, { useEffect } from "react";
-import SplashScreen from "../splash-screen/SplashScreen";
 import SingleProject from "./SingleProject";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchProjects } from "../../redux/features/projects/projectSlice";
+import { Row, Col } from "react-bootstrap";
+import { useDeviceInfo } from "../../hooks/useDeviceInfo";
 
 export default function Projects() {
   const dispatch = useDispatch();
   const newprojects = useSelector((state) => state.projects.projects);
+  const { deviceIsDesktop } = useDeviceInfo();
 
   useEffect(() => {
     dispatch(fetchProjects());
@@ -18,11 +20,15 @@ export default function Projects() {
 
   const LoadedContent = () => {
     return (
-      <div className="project-container display-flex justify-content-s-a">
+      <Row style={{ flexWrap: "nowrap", overflowX: "scroll" }}>
         {newprojects.map((project) => {
-          return <SingleProject {...project} key={project.name} />;
+          return (
+            <Col sm={4}>
+              <SingleProject {...project} key={project.name} />
+            </Col>
+          );
         })}
-      </div>
+      </Row>
     );
   };
 
@@ -36,32 +42,46 @@ export default function Projects() {
   }
 
   return (
-    <SplashScreen>
-      <div
-        className="overlay"
-        style={{
-          textAlign: "center",
-        }}
-      >
-        <h2
-          style={{
-            color: "white",
-            paddingTop: 40,
-            letterSpacing: "2px",
-            textTransform: "uppercase",
-          }}
-        >
-          {" "}
-          Projects{" "}
-        </h2>
+    <div
+      style={{
+        textAlign: "center",
+      }}
+    >
+      <Row style={{ position: "relative" }}>
+        <Col sm={12}>
+          <h2
+            style={{
+              color: "white",
+              letterSpacing: "2px",
+              textTransform: "uppercase",
+            }}
+          >
+            {" "}
+            Projects{" "}
+          </h2>
+          <span
+            style={{
+              backgroundColor: "white",
+              position: "absolute",
+              borderRadius: "10px",
+              fontSize: "1.5vw",
+              boxShadow: "3px 3px 3px black",
+              zIndex: "1000",
+              right: "30px",
+            }}
+          >
+            {deviceIsDesktop ? "Scroll" : "Swipe"} to the rignt to view more
+            projects!
+          </span>
+        </Col>
+      </Row>
 
-        <div
-          className="project-container"
-          style={{ marginTop: "2rem", padding: "1rem" }}
-        >
-          {renderContent(newprojects && newprojects.length > 0)}
-        </div>
+      <div
+        className="project-container"
+        style={{ marginTop: "2rem", padding: "1rem" }}
+      >
+        {renderContent(newprojects && newprojects.length > 0)}
       </div>
-    </SplashScreen>
+    </div>
   );
 }

@@ -46,7 +46,7 @@ function App() {
   console.log("updated");
 
   return (
-    <div className="App">
+    <div className="App" id="bg-video-wrapper" style={{ height: "100%" }}>
       {deviceIsDesktop && (
         <StickyBreadCrumb>
           <button className="add-to-home">Add Application to Desktop</button>
@@ -61,6 +61,7 @@ function App() {
         </div>
         <Nav />
         <AddToHome />
+
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/projects" element={<Projects />} />

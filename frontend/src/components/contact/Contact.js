@@ -1,90 +1,34 @@
 import React from "react";
-import { useSelector } from "react-redux";
-import SplashScreen from "../splash-screen/SplashScreen";
 import "./Contact.css";
+import Card from "../lib/Card/Card";
+import { useDeviceInfo } from "../../hooks/useDeviceInfo";
+import ContactForm from "./ContactForm";
 
 export default function Contact() {
-  const controlDimenstions = useSelector((state) => state.control);
+  const { deviceIsDesktop, screenWidth } = useDeviceInfo();
 
   return (
-    <SplashScreen>
-      <div
-        className="contact-wrapper"
-        style={{ height: controlDimenstions.screenHeight }}
-        id="bg-video-wrapper"
+    <div className="contact-wrapper">
+      <Card
+        style={{
+          borderRadius: "16px",
+          width: deviceIsDesktop ? screenWidth / 1.5 : screenWidth * 0.8,
+        }}
       >
-        <div
-          className="card"
-          style={{
-            borderRadius: "16px",
-            width:
-              controlDimenstions.deviceType === "desktop"
-                ? controlDimenstions.screenWidth / 1.5
-                : controlDimenstions.screenWidth * 0.8,
-          }}
-        >
-          <div className="card-header">
-            <span
-              className="contact-me-header"
-              style={{
-                fontSize:
-                  controlDimenstions.deviceType === "desktop" ? "4vw" : "6vw",
-              }}
-            >
-              Contact Me
-            </span>
-          </div>
-          <div className="card-body">
-            <form className="contact-me-form fluid-width d-flex justify-content-center flex-direction-col">
-              <div className="fluid-width d-flex justify-content-center">
-                <input type="text" placeholder="Name" />
-              </div>
-
-              <div className="fluid-width d-flex justify-content-center">
-                <input type="text" placeholder="Phone Number" />
-              </div>
-
-              <div className="fluid-width d-flex justify-content-center">
-                <input type="text" placeholder="Email" />
-              </div>
-
-              <div className="fluid-width d-flex justify-content-center flex-column">
-                <select>
-                  <option disabled selected hidden>
-                    Why are you reaching out?
-                  </option>
-                  <option> Possible Service (i.e. Website, Mobile App)</option>
-                  <option> Review of Overall Website </option>
-                  <option> Other Concern/Question</option>
-                </select>
-              </div>
-
-              <div className="fluid-width d-flex justify-content-center">
-                <textarea placeholder="Notes" />
-              </div>
-              <div className="fluid-width d-flex justify-content-center">
-                <div className="button-container d-flex justify-content-end">
-                  <button
-                    style={{
-                      width:
-                        controlDimenstions.deviceType === "desktop"
-                          ? "12vw"
-                          : "30vw",
-                      height:
-                        controlDimenstions.deviceType === "desktop"
-                          ? "6vh"
-                          : "6vh",
-                    }}
-                  >
-                    {" "}
-                    Send{" "}
-                  </button>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </SplashScreen>
+        <Card.Header>
+          <span
+            className="contact-me-header"
+            style={{
+              fontSize: deviceIsDesktop ? "3.5vw" : "6vw",
+            }}
+          >
+            Contact Me
+          </span>
+        </Card.Header>
+        <Card.Body style={{ padding: "2rem" }}>
+          <ContactForm />
+        </Card.Body>
+      </Card>
+    </div>
   );
 }

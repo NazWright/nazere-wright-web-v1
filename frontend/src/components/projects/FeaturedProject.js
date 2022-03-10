@@ -4,7 +4,7 @@ import { images } from "../../config/images";
 
 export default function FeaturedProject() {
   return (
-    <section style={{ marginBottom: 50, marginTop: 50 }}>
+    <section style={{ margin: "70px 0px" }}>
       <div className="row">
         <div className="col">
           <div />

@@ -4,7 +4,8 @@ import { FaLink, FaGithub } from "react-icons/fa";
 import IconLink from "../icon-link/IconLink";
 import ReactStars from "react-rating-stars-component";
 import { updateProjectRating } from "../../redux/features/projects/projectSlice";
-import { Modal, Button } from "react-bootstrap";
+import { Modal, Button, Row, Col } from "react-bootstrap";
+import ProjectLogo from "./ProjectLogo";
 
 export default function SingleProject({
   name,
@@ -17,7 +18,6 @@ export default function SingleProject({
 }) {
   const deviceType = useSelector((state) => state.control.deviceType);
   const [descClicked, setDescClicked] = useState(false);
-  const [additionalNotes, setAdditionalNotes] = useState("");
   const [updatedRating, setUpdatedRating] = useState(0);
   const [projectRated, setProjectRated] = useState(false);
   const [showModal, setShowModal] = useState(false);
@@ -31,7 +31,7 @@ export default function SingleProject({
           position: "absolute",
           boxShadow: "1px 3px 3px black",
           borderRadius: " 9px",
-          width: "35%",
+          width: "100%",
         }}
       >
         <Modal.Header
@@ -119,8 +119,6 @@ export default function SingleProject({
 
   const style = {
     container: {
-      width:
-        deviceType === "mobile" || deviceType === "tablet" ? "100%" : "40%",
       textAlign: "center",
     },
     links: {
@@ -131,27 +129,48 @@ export default function SingleProject({
   const defaultContent = () => {
     return (
       <div>
-        <img
-          width={"100%"}
-          height={deviceType === "desktop" ? 300 : undefined}
-          style={{
-            borderRadius: "10px",
-            border: "1px solid black",
-          }}
-          src={image}
-        ></img>
-        <h2
-          style={{
-            fontSize: deviceType === "desktop" ? "2vw" : "4vw",
-            fontWeight: "bold",
-            margin: "2rem",
-            height: 50,
-          }}
-        >
-          {" "}
-          {name}{" "}
-        </h2>
-        <div className="justify-content-center d-flex mb-5">
+        <Row className="mb-4">
+          <Col sm={12}>
+            <ProjectLogo
+              width={"100%"}
+              height={250}
+              style={{
+                borderRadius: "10px",
+                border: "1px solid black",
+                cursor: "pointer",
+              }}
+              src={image}
+            />
+          </Col>
+          <Col
+            sm={12}
+            className="align-items-center d-flex justify-content-center"
+          >
+            <h2
+              style={{
+                fontSize: deviceType === "desktop" ? "1.5vw" : "4vw",
+                fontWeight: "bold",
+                height: 40,
+                padding: "1rem",
+              }}
+            >
+              {" "}
+              {name}{" "}
+            </h2>
+          </Col>
+        </Row>
+        <div className="justify-content-center d-flex mb-1">
+          {!showModal && (
+            <span
+              style={{
+                fontWeight: "bold",
+              }}
+            >
+              Care to give a rating for this project?
+            </span>
+          )}
+        </div>
+        <div className="justify-content-center d-flex mb-3">
           {!showModal && (
             <ReactStars
               size={40}
@@ -162,47 +181,6 @@ export default function SingleProject({
               value={projectRated ? updatedRating : undefined}
             />
           )}
-          <RatingModal
-            show={showModal}
-            handleRatingSubmit={changeRating}
-            name={name}
-          />
-        </div>
-        <div>
-          {websiteURL ? (
-            <IconLink
-              icon={
-                <FaLink
-                  size={
-                    deviceType === "mobile" || deviceType === "tablet"
-                      ? "3vw"
-                      : "1.5vw"
-                  }
-                  className="github-link-icon"
-                />
-              }
-              labelText="Website"
-              URL={websiteURL}
-            />
-          ) : undefined}
-        </div>
-        <div>
-          {gitHubURL ? (
-            <IconLink
-              icon={
-                <FaGithub
-                  size={
-                    deviceType === "mobile" || deviceType === "tablet"
-                      ? "3vw"
-                      : "1.5vw"
-                  }
-                  className="github-link-icon"
-                />
-              }
-              labelText="Github"
-              URL={gitHubURL}
-            />
-          ) : undefined}
         </div>
       </div>
     );
@@ -234,20 +212,59 @@ export default function SingleProject({
 
   return (
     <div className="project-card" style={style.container}>
+      <RatingModal
+        show={showModal}
+        handleRatingSubmit={changeRating}
+        name={name}
+      />
       {descClicked ? hoveredContent() : defaultContent()}
 
       <button
-        className="view-desc-project"
+        className="view-desc-project mb-3"
         style={{
           margin: "1rem",
           height: deviceType === "desktop" ? "8vh" : "8vh",
-          width: deviceType === "desktop" ? "10vw" : "30vw",
+          width: "70%",
           fontSize: deviceType === "desktop" ? "1vw" : "2vw",
         }}
         onClick={handleDescClick}
       >
         {descClicked ? "Close Description" : "View Description"}
       </button>
+      <div>
+        {websiteURL ? (
+          <IconLink
+            icon={
+              <FaLink
+                size={
+                  deviceType === "mobile" || deviceType === "tablet"
+                    ? "3vw"
+                    : "1.5vw"
+                }
+                className="github-link-icon"
+              />
+            }
+            URL={websiteURL}
+          />
+        ) : undefined}
+      </div>
+      <div>
+        {gitHubURL ? (
+          <IconLink
+            icon={
+              <FaGithub
+                size={
+                  deviceType === "mobile" || deviceType === "tablet"
+                    ? "3vw"
+                    : "1.5vw"
+                }
+                className="github-link-icon"
+              />
+            }
+            URL={gitHubURL}
+          />
+        ) : undefined}
+      </div>
     </div>
   );
 }
