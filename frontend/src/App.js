@@ -13,6 +13,7 @@ import SplashScreen from "./components/splash-screen/SplashScreen";
 import AddToHome from "./components/add-to-home/AddToHome";
 import StickyBreadCrumb from "./components/sticky-breadcrumb/StickyBreadCrumb";
 import SplashScreenContent from "./components/nw-splash-screen-content/SplashScreenContent";
+import $ from "jquery";
 
 import { useDeviceInfo } from "./hooks/useDeviceInfo";
 

@@ -8,8 +8,8 @@ export const style = (deviceType) => {
     },
     logo: {
       borderRadius: "10px",
-      border: "1px solid black",
       cursor: "pointer",
+      boxShadow: "rgb(62 60 60) 2px 3.5px 3px",
     },
     title: {
       fontSize:
@@ -19,7 +19,7 @@ export const style = (deviceType) => {
           ? "2.5vw"
           : "4.5vw",
       fontWeight: "bold",
-      height: 40,
+      height: 60,
       padding: "1rem",
     },
     ratingTitle: {

@@ -6,14 +6,15 @@
 }
 
 .nav-column-link {
-  font: bold normal normal 20px/1 FontAwesome;
+  font-size: 1.5vw;
   text-decoration: none;
   color: white;
   transition: 0.5s ease-in-out;
-  text-transform: uppercase;
+  text-transform: capitalize;
+  font-weight: bold;
 }
 .nav-column-link:hover {
-  color: rgb(158, 120, 251);
+  color: #9e78fb;
   text-shadow: 1px 1px 1px white;
   letter-spacing: 1px;
   font-weight: bold;
@@ -37,7 +38,7 @@
   transition: 0.5s ease-in-out;
 }
 .icon-container .fa:hover {
-  color: rgb(158, 120, 251);
+  color: #9e78fb;
 }
 
 .icons-nav {

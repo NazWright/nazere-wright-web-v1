@@ -5,9 +5,9 @@ import FormTextInput from "./FormTextInput";
 const defFormClassNames =
   "contact-me-form fluid-width d-flex justify-content-center flex-direction-col";
 
-function Form({ children, className }) {
+function Form({ children, className, onSubmit }) {
   return (
-    <form className={className || defFormClassNames}>
+    <form className={className || defFormClassNames} onSubmit={onSubmit}>
       {children && children}
     </form>
   );

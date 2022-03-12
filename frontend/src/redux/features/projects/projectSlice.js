@@ -15,7 +15,8 @@ export const projectSlice = createSlice({
     rateProject: (state, action) => {
       state.projects.map((project) => {
         if (project.id === action.payload.id) {
-          return action.payload;
+          console.log({ ...project, userRating: action.payload });
+          return { ...project, userRating: action.payload };
         }
         return project;
       });
@@ -44,6 +45,7 @@ export const updateProjectRating = (ratingInfo) => {
     try {
       // fetch from the api backend
       const response = await axios.put("/api/projects", ratingInfo);
+      console.log("response" + response.data);
       dispatch(rateProject(response.data));
     } catch (error) {
       console.error(error);

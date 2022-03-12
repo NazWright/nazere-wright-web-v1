@@ -6,3 +6,7 @@
     right: 100px;
   }
 }
+
+.slide-in-from-right {
+  animation: slide-in-card 1s ease-in-out;
+}
