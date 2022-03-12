@@ -17,16 +17,7 @@ export default function Header() {
     <section className="header-section">
       <div className="row d-flex justify-content-end p-t-b-30">
         <div className="hero-branding col d-flex flex-column align-items-center  mb-3">
-          <h1
-            style={{
-              font: ` bold normal normal ${
-                deviceIsDesktop ? "4vw" : "8vw"
-              }/1 FontAwesome`,
-            }}
-            className="mb-5"
-          >
-            {name}
-          </h1>
+          <h1 className="mb-5">{name}</h1>
           <h2 className="tagline">{tagline}</h2>
         </div>
         <div className="d-flex justify-content-center"></div>

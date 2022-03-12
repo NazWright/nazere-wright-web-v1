@@ -9,19 +9,21 @@ const skills = [
     footerText:
       "Well-versed in creating beautiful user interfaces with HTML, CSS,and JS technologies: React, Angular, JQuery",
     background: "linear-gradient(rgb(158, 120, 251), #70c3f1 99%)",
-    iconColor: "rgb(241,175,12)",
-    titleColor: "rgb(241,175,12)",
+    iconColor: "white",
+    titleColor: "white",
     icon: "fa fa-code icon",
+    descColor: "white",
   },
   {
     title: "API Development",
-    titleColor: "rgb(158, 120, 251)",
-    iconColor: "#9e78fb",
+    titleColor: "white",
+    iconColor: "white",
     descText: "2 yrs",
     footerText:
       "Experienced in designing and developing performant, secure, cutting-edge APIs in Node.js & Java",
     background: "linear-gradient(#70c3f1, rgb(241, 175, 12) 99%)",
     icon: "fa fa-wifi icon",
+    descColor: "white",
   },
   {
     title: "Responsive Wordpress Web Design",
@@ -29,9 +31,10 @@ const skills = [
     footerText:
       "Ample hands-on industry experience involving Wordpress web design and customizing the Wordpress CMS backend.",
     background: "linear-gradient(rgb(158, 120, 251), #70c3f1 99%)",
-    iconColor: "rgb(241,175,12)",
-    titleColor: "rgb(241,175,12)",
+    iconColor: "white",
+    titleColor: "white",
     icon: "fa fa-wordpress icon",
+    descColor: "white",
   },
 ];
 

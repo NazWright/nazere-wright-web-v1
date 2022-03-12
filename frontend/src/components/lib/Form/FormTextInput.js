@@ -5,6 +5,8 @@ export default function FormTextInput({
   className,
   placeholder,
   onFocus,
+  onChange,
+  hidden,
 }) {
   return (
     <input
@@ -12,6 +14,8 @@ export default function FormTextInput({
       className={className || "nw-control"}
       placeholder={placeholder}
       onFocus={onFocus}
+      hidden={hidden}
+      onChange={onChange}
     />
   );
 }

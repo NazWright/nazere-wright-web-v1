@@ -51,7 +51,7 @@ export default function ContactForm() {
             <Button
               style={{
                 width: deviceIsDesktop ? "12vw" : "30vw",
-                height: deviceIsDesktop ? "6vh" : "6vh",
+                height: deviceIsDesktop ? "7vh" : "6vh",
               }}
             >
               Send

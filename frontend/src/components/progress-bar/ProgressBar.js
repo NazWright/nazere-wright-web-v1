@@ -50,13 +50,11 @@ export default function ProgressBar({
   return (
     <div className="justify-content-center text-align-center">
       <h2
+        className="nw-item-label"
         style={{
           color: "white",
           fontWeight: "bold",
-          letterSpacing: "1px",
-          font: `bold normal normal ${
-            deviceType === "desktop" ? "2vw" : "2.5vw"
-          }/1 FontAwesome`,
+          fontSize: "2vw",
         }}
       >
         {label}

@@ -8,6 +8,7 @@ export default function SkillCard({
   iconColor,
   titleColor,
   icon,
+  descColor,
 }) {
   return (
     <div
@@ -33,10 +34,20 @@ export default function SkillCard({
           >
             {title}
           </h3>
-          <h1 className="navbar-brand" style={{ color: "white" }}>
+          <h1
+            className="navbar-brand"
+            style={{
+              color: descColor,
+              fontStyle: "italic",
+              fontWeight: "500",
+              fontSize: "20px",
+            }}
+          >
             {descText}
           </h1>
-          <p style={{ color: "white", fontSize: "18px" }}>{footerText}</p>
+          <p style={{ color: descColor, fontSize: "18px", fontWeight: "600" }}>
+            {footerText}
+          </p>
         </i>
       </div>
     </div>

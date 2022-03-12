@@ -55,21 +55,26 @@ body {
   background: white;
   margin: 1rem;
   border-radius: 10px;
-  padding: 1rem;
+  padding: 2rem;
   box-shadow: 2px 3px 5px lightblue;
   position: relative;
+  z-index: 10;
 }
 
 .view-desc-project {
-  border-radius: 10px;
-  background: linear-gradient(rgb(152, 71, 190), rgb(12, 176, 241) 99%);
+  border: none;
+  border-radius: 9px;
+  box-shadow: 2px 3px 2px black;
+  background-color: #9e78fb;
+  text-transform: capitalize;
+  font-weight: bold;
   color: white;
-  border: white;
-  box-shadow: 1px 3px 3px black;
-  transition: 0.7s ease-out;
-  font-weight: 600;
-  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  width: 12vw;
+  height: 8vh;
 }
+
 .view-desc-project:hover {
   box-shadow: 1px 3px 10px black;
 }
@@ -90,23 +95,14 @@ body {
   transition: 0.5s ease-in;
 }
 
-.github-link-container:hover .github-link-icon {
-  color: rgb(12, 176, 241);
+.github-link-icon:hover {
+  color: #9e78fb;
 }
 
 .github-link-container:hover .link-icon-text {
   color: rgb(12, 176, 241);
   letter-spacing: 2px;
   font-weight: 800;
-}
-
-.view-desc-project {
-  transition: 0.5s;
-}
-.view-desc-project:hover {
-  font-weight: 800;
-  letter-spacing: 1px;
-  text-transform: uppercase;
 }
 
 .add-to-home {
@@ -184,4 +180,71 @@ body {
 
 #root {
   height: 100%;
+}
+
+/* titles of pages */
+.nw-section-title {
+  font-family: Impact, fantasy;
+}
+
+/* for labels of many items, such as each name on grid of proejcts */
+.nw-item-header.desktop {
+  font-size: 1.5vw;
+}
+.nw-item-header.mobile {
+  font-size: 4vw;
+}
+.nw-item-label {
+  font-weight: 700;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.nw-grey-text {
+  color: grey;
+}
+.nw-small-text-heading {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-style: italic;
+}
+
+.nw-arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-10px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+.animate-slide-left {
+  animation: slide-in-left 1.5s linear infinite;
+  animation-delay: 500ms;
+}
+.carousel-control-prev {
+  justify-content: start;
+  padding: 0.5rem;
+  width: 5vw;
+}
+.carousel-control-next {
+  justify-content: end;
+  padding: 0.5rem;
+  /* take this property off on mobile phones */
+  width: 5vw;
 }

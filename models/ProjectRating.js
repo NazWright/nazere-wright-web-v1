@@ -6,6 +6,7 @@ const ProjectRatingSchema = new Schema({
   rating: Number,
   additionalNotes: String,
   projectId: String,
+  date: Date,
 });
 
 mongoose.model("project-ratings", ProjectRatingSchema);

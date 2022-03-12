@@ -46,9 +46,9 @@ export default function Skills() {
     >
       <div className="fluid-width text-center">
         <h2
-          className="skills-header mb-5"
+          className="skills-header mb-5 nw-section-title "
           style={{
-            fontSize: deviceType === "desktop" ? "3vw" : "6vw",
+            fontSize: deviceType === "desktop" ? "3.5vw" : "6vw",
           }}
         >
           Skills

@@ -17,7 +17,7 @@ export default function Contact() {
       >
         <Card.Header>
           <span
-            className="contact-me-header"
+            className="contact-me-header nw-section-title"
             style={{
               fontSize: deviceIsDesktop ? "3.5vw" : "6vw",
             }}

@@ -11,16 +11,9 @@ export default function Projects() {
   const newprojects = useSelector((state) => state.projects.projects);
   const { deviceIsDesktop } = useDeviceInfo();
 
+  console.log(newprojects);
+
   const style = {
-    tooltip: {
-      backgroundColor: "white",
-      position: "absolute",
-      borderRadius: "10px",
-      fontSize: deviceIsDesktop ? "1.5vw" : "4vw",
-      boxShadow: "3px 3px 3px black",
-      zIndex: "1000",
-      right: "30px",
-    },
     title: {
       color: "white",
       letterSpacing: "2px",
@@ -51,10 +44,10 @@ export default function Projects() {
     <div style={style.div}>
       <Row style={style.row}>
         <Col sm={12}>
-          <h2 style={style.title}> Projects </h2>
-          <span style={style.tooltip}>
-            {deviceIsDesktop ? "Scroll" : "Swipe"} right &gt;
-          </span>
+          <h2 style={style.title} className="nw-section-title">
+            {" "}
+            Projects{" "}
+          </h2>
         </Col>
       </Row>
 

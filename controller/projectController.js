@@ -21,21 +21,16 @@ const projectController = (validation) => {
     async deleteProject(req, res) {},
 
     async updateProject(req, res) {
-      // check if req.body.id is existing
-      // add a entry into the project rating table
-      // update the entry in the projects table
-      console.log("hit");
       try {
-        if (req.body.id) {
+        if (req.body.projectId) {
           const createProjectRating = await ProjectRating.create({
-            projectId: req.body.id,
+            projectId: req.body.projectId,
             rating: req.body.rating,
-            additonalNotes: req.body.additionalNotes,
+            additionalNotes: req.body.additionalNotes,
+            name: req.body.name,
+            date: Date.now(),
           });
-          if (createProjectRating) {
-            return res.status(200).send(createProjectRating);
-          }
-          throw new Error("Rating could not be sumbitted. Please try again.");
+          return res.status(200).send(createProjectRating);
         }
       } catch (error) {
         return res.status(500).send({ error: error });

@@ -15,6 +15,7 @@ if (process.env.NODE_ENV !== "test") {
 
 // initialize server here
 const app = express();
+app.use(express.json());
 require("./api")(app);
 const PUBLIC_VAPID_KEY =
   "BNIi4HYbIShAxUIHIh70I9cMOkOUZZ4shJOcLGv6b_n28XjsQsKuzmk-kYRSUrvTWj3x-CwMzix-P5GP-LWaEpo";
@@ -25,8 +26,6 @@ webPush.setVapidDetails(
   PUBLIC_VAPID_KEY,
   PRIVATE_VAPID_KEY
 );
-
-app.use(express.json());
 
 if (process.env.NODE_ENV === "production") {
   // making sure express will serve up production assets

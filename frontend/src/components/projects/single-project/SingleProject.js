@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { FaLink, FaGithub } from "react-icons/fa";
 import IconLink from "../../icon-link/IconLink";
 import { updateProjectRating } from "../../../redux/features/projects/projectSlice";
-import RatingModal from "../RatingModal";
 import SingleProjectClicked from "./SingleProjectClicked";
 import SingleProjectLoaded from "./SingleProjectLoaded";
 import { style } from "./singleProjectStyle";
@@ -84,6 +83,8 @@ export default function SingleProject({
         logoStyle={projectStyle.logo}
         name={name}
         image={image}
+        closeModalHandler={closeRatingModal}
+        id={id}
       />
     );
   };
@@ -113,20 +114,9 @@ export default function SingleProject({
 
   return (
     <div className="project-card" style={projectStyle.container}>
-      <RatingModal
-        show={showModal}
-        changeRating={onChangeRating}
-        name={name}
-        handleModal={closeRatingModal}
-        ratingValue={showModal ? updatedRating : 0}
-      />
       {renderContent()}
 
-      <button
-        className="view-desc-project mb-3"
-        style={projectStyle.button}
-        onClick={handleDescClick}
-      >
+      <button className="view-desc-project mb-4" onClick={handleDescClick}>
         {descClicked ? "Close Description" : "View Description"}
       </button>
       {renderIcons()}
