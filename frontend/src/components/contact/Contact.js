@@ -3,9 +3,11 @@ import "./Contact.css";
 import Card from "../lib/Card/Card";
 import { useDeviceInfo } from "../../hooks/useDeviceInfo";
 import ContactForm from "./ContactForm";
+import { useResponsiveClassName } from "../../hooks/useResponsiveClassName";
 
 export default function Contact() {
   const { deviceIsDesktop, screenWidth } = useDeviceInfo();
+  const responsiveClassName = useResponsiveClassName();
 
   return (
     <div className="contact-wrapper">

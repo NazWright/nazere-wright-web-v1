@@ -10,7 +10,7 @@ export default function FormTextArea({
   return (
     <textarea
       placeholder={placeholder}
-      className={className}
+      className={className + " nw-form-control"}
       hidden={hidden}
       onChange={onChange}
     >

@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Slider({ children }) {
   return (
-    <div className="d-flex justify-content-center">
+    <div className="d-flex justify-content-center full-width">
       <div
         className="card aboutme-card"
         style={{

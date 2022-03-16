@@ -40,7 +40,7 @@ const skills = [
 
 export default function TopSkills() {
   return (
-    <section className="features-boxed" style={{ margin: "100px 0px" }}>
+    <section className="features-boxed mb-5">
       <div className="container">
         <div
           className="d-flex justify-content-center"

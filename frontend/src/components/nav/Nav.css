@@ -3,10 +3,10 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  padding: 1rem;
 }
 
 .nav-column-link {
-  font-size: 1.5vw;
   text-decoration: none;
   color: white;
   transition: 0.5s ease-in-out;
@@ -36,6 +36,7 @@
 
 .icon-container .fa {
   transition: 0.5s ease-in-out;
+  color: white;
 }
 .icon-container .fa:hover {
   color: #9e78fb;
@@ -86,4 +87,28 @@
   #background-video {
     height: 250vh;
   }
+}
+
+.nw-nav {
+  display: flex;
+  position: relative;
+  width: 100%;
+  margin: 0;
+  align-items: center;
+}
+
+.nw-nav > .nw-nav-group {
+  height: 100%;
+}
+
+.nw-nav.desktop {
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.nw-nav.mobile {
+  flex-direction: column;
+}
+.nw-nav-tablet {
+  flex-direction: column;
 }

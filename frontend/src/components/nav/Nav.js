@@ -1,92 +1,58 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./Nav.css";
-import { useDispatch, useSelector } from "react-redux";
-import { getLinks } from "../../redux/features/navigation/navigationSlice";
-import { navigationLinks } from "../../constants/navigationLinks";
+import NavigationBrand from "./NavigationBrand";
 import NavigationGroup from "./NavigationGroup";
-import HomePageLink from "./HomePageLink";
-import { useNavigate } from "react-router-dom";
-import { toggleSplashScreen } from "../../redux/features/control/controlSlice";
-import { navigateTo } from "../../utils/navigateTo";
+import NavigationLink from "./NavigationLink";
 
-export default function Nav() {
-  const { deviceType } = useSelector((state) => state.control);
+export default function Nav({ children, className }) {
+  return <div className={className}>{children && children}</div>;
+}
 
-  const deviceIsDesktop = deviceType === "desktop" ? true : false;
+Nav.Group = NavigationGroup;
+Nav.Link = NavigationLink;
+Nav.Brand = NavigationBrand;
 
-  const dispatch = useDispatch();
+// <div className={`${deviceIsDesktop ? "col-2" : ""} col icons-nav`}>
+// <div
+//   className="icon-container"
+//   onClick={() =>
+//     navigateTo("https://www.instagram.com/nazwrightthedeveloper/")
+//   }
+//   style={{
+//     cursor: "pointer",
+//   }}
+// >
+//   <i className="fa fa-instagram social-media-icon"></i>
+// </div>
+// <div
+//   className="icon-container"
+//   onClick={() => navigateTo("https://github.com/NazWright")}
+//   style={{
+//     cursor: "pointer",
+//   }}
+// >
+//   <i className="fa fa-github-square social-media-icon"></i>
+// </div>
+// <div
+//   className="icon-container"
+//   onClick={() =>
+//     navigateTo("https://www.linkedin.com/in/nazere-wright-b486b0172/")
+//   }
+//   style={{
+//     cursor: "pointer",
+//   }}
+// >
+//   <i className="fa fa-linkedin social-media-icon"> </i>
+// </div>
+// </div>
 
-  const navigate = useNavigate();
-
-  const links = useSelector((state) => state.navigation.links) || [];
-
-  const handleLinkClick = (link) => {
-    dispatch(toggleSplashScreen(true));
-    navigate(link.path);
-  };
-
-  useEffect(() => {
-    dispatch(getLinks(navigationLinks));
-  }, [dispatch]);
-
-  return (
-    <section
-      style={{
-        position: deviceIsDesktop ? undefined : "sticky",
-      }}
-    >
-      <div
-        className={`${
-          deviceIsDesktop ? "flex-row flex-wrap" : "flex-column"
-        } row navigation align-items-center`}
-      >
-        {links.length > 1
-          ? [
-              <HomePageLink
-                link={links.filter((link) => link.path === "/")[0]}
-                handleLinkClick={handleLinkClick}
-              />,
-              <NavigationGroup
-                links={links.filter((link) => link.path !== "/")}
-                handleLinkClick={handleLinkClick}
-              />,
-            ]
-          : undefined}
-        {/* Icons */}
-        <div className={`${deviceIsDesktop ? "col-2" : ""} col icons-nav`}>
-          <div
-            className="icon-container"
-            onClick={() =>
-              navigateTo("https://www.instagram.com/nazwrightthedeveloper/")
-            }
-            style={{
-              cursor: "pointer",
-            }}
-          >
-            <i className="fa fa-instagram social-media-icon"></i>
-          </div>
-          <div
-            className="icon-container"
-            onClick={() => navigateTo("https://github.com/NazWright")}
-            style={{
-              cursor: "pointer",
-            }}
-          >
-            <i className="fa fa-github-square social-media-icon"></i>
-          </div>
-          <div
-            className="icon-container"
-            onClick={() =>
-              navigateTo("https://www.linkedin.com/in/nazere-wright-b486b0172/")
-            }
-            style={{
-              cursor: "pointer",
-            }}
-          >
-            <i className="fa fa-linkedin social-media-icon"> </i>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
+{
+  /* <div key={link.path}>
+<div
+  className={`${link.className} nw-link ${responsiveClassName}`}
+  onClick={() => handleLinkClick(link)}
+>
+  {link.linkText}
+</div>
+</div> */
 }

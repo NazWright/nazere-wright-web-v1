@@ -8,14 +8,13 @@ import Skills from "./components/skills/Skills";
 import { useDispatch } from "react-redux";
 import { setDimensions } from "./redux/features/control/controlSlice";
 import VideoBackground from "./components/videobackground/VideoBackground";
-import Nav from "./components/nav/Nav";
 import SplashScreen from "./components/splash-screen/SplashScreen";
 import AddToHome from "./components/add-to-home/AddToHome";
 import StickyBreadCrumb from "./components/sticky-breadcrumb/StickyBreadCrumb";
 import SplashScreenContent from "./components/nw-splash-screen-content/SplashScreenContent";
-import $ from "jquery";
 
 import { useDeviceInfo } from "./hooks/useDeviceInfo";
+import NavContainer from "./components/nav/NavContainer";
 
 function App() {
   const dispatch = useDispatch();
@@ -48,20 +47,13 @@ function App() {
 
   return (
     <div className="App" id="bg-video-wrapper" style={{ height: "100%" }}>
-      {deviceIsDesktop && (
-        <StickyBreadCrumb>
-          <button className="add-to-home">Add Application to Desktop</button>
-        </StickyBreadCrumb>
-      )}
-
       <SplashScreen splashContent={<SplashScreenContent />}>
         <div>
           <VideoBackground
             src={"https://nxwv1images.s3.amazonaws.com/codingvidres.mp4"}
           />
         </div>
-        <Nav />
-        <AddToHome />
+        <NavContainer />
 
         <Routes>
           <Route path="/" element={<Home />} />
