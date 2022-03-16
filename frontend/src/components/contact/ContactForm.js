@@ -2,12 +2,14 @@ import React from "react";
 import Form from "../lib/Form/Form";
 import Button from "../lib/Button/Button";
 import { Row, Col } from "react-bootstrap";
-import { useDeviceInfo } from "../../hooks/useDeviceInfo";
 import ContactDropDown from "./ContactDropDown";
+import { useResponsiveClassName } from "../../hooks/useResponsiveClassName";
+import { dropDownOptions } from "./contactDropDownData";
 
 export default function ContactForm() {
-  const { deviceIsDesktop } = useDeviceInfo();
-  const changeInputLayoutOnMobile = !deviceIsDesktop && "flex-column";
+  const responsiveClassName = useResponsiveClassName();
+  const changeInputLayoutOnMobile =
+    responsiveClassName !== "desktop" && "flex-column";
 
   return (
     <Form>
@@ -46,54 +48,10 @@ export default function ContactForm() {
         </Col>
       </Row>
       <Row>
-        <Col>
-          <ButtonContainer>
-            <Button
-              style={{
-                width: deviceIsDesktop ? "12vw" : "30vw",
-                height: deviceIsDesktop ? "7vh" : "6vh",
-              }}
-            >
-              Send
-            </Button>
-          </ButtonContainer>
+        <Col className="fluid-width d-flex justify-content-end">
+          <Button className={`nw-button ${responsiveClassName}`}>Send</Button>
         </Col>
       </Row>
     </Form>
   );
 }
-
-const ButtonContainer = ({ children }) => {
-  return (
-    <div className="button-container d-flex justify-content-end fluid-width">
-      {children}
-    </div>
-  );
-};
-
-const dropDownOptions = [
-  {
-    text: "Why are you reaching out?",
-    selected: true,
-    disabled: true,
-    hidden: true,
-  },
-  {
-    text: "Possible Service (i.e. Website, Mobile App)",
-    selected: false,
-    disabled: false,
-    hidden: false,
-  },
-  {
-    text: "Review of Overall Website",
-    selected: false,
-    disabled: false,
-    hidden: false,
-  },
-  {
-    text: "Other Concern/Question",
-    selected: false,
-    disabled: false,
-    hidden: false,
-  },
-];

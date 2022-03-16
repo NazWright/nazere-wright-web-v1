@@ -116,7 +116,7 @@ export default function SingleProject({
     <div className="project-card" style={projectStyle.container}>
       {renderContent()}
 
-      <button className="view-desc-project mb-4" onClick={handleDescClick}>
+      <button className="nw-button mb-4" onClick={handleDescClick}>
         {descClicked ? "Close Description" : "View Description"}
       </button>
       {renderIcons()}
