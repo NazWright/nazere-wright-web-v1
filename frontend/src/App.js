@@ -9,10 +9,7 @@ import { useDispatch } from "react-redux";
 import { setDimensions } from "./redux/features/control/controlSlice";
 import VideoBackground from "./components/videobackground/VideoBackground";
 import SplashScreen from "./components/splash-screen/SplashScreen";
-import AddToHome from "./components/add-to-home/AddToHome";
-import StickyBreadCrumb from "./components/sticky-breadcrumb/StickyBreadCrumb";
 import SplashScreenContent from "./components/nw-splash-screen-content/SplashScreenContent";
-
 import { useDeviceInfo } from "./hooks/useDeviceInfo";
 import NavContainer from "./components/nav/NavContainer";
 
