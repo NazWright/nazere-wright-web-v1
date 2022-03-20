@@ -17,7 +17,7 @@ export default function FormTextInput({
     <input
       type={type}
       className={className + " nw-form-control"}
-      placeholder={placeholder}
+      placeholder={required ? `${placeholder}*` : placeholder}
       onFocus={onFocus}
       hidden={hidden}
       onChange={onChange}
