@@ -1,6 +1,5 @@
 import React from "react";
 import "./VideoBackground.css";
-import poster from "./mobilecodingposter.svg";
 
 export default function VideoBackground({ src }) {
   return (
@@ -10,7 +9,7 @@ export default function VideoBackground({ src }) {
       loop
       muted
       id="background-video"
-      poster={poster}
+      poster="https://nxwv1images.s3.amazonaws.com/video-background-poster.png"
     >
       <source
         type="video/mp4"

@@ -17,15 +17,15 @@ class ContactFormContainer extends Component {
   // handle the submission of the contact form
   handleSubmit(event) {
     event.preventDefault();
-    event.target.disabled = true;
-    console.log(this.state);
+    let form = event.target;
+    form.disabled = true;
     this.props.dispatch(sendContactMessage(this.state));
     alert(
       "Thank you for submitting your contacting me. I will email in response shortly"
     );
     // resetting all of the form values
-    event.target.reset();
-    event.target.disabled = false;
+    form.reset();
+    form.disabled = false;
   }
 
   intialState = {
