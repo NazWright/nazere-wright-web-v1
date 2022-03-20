@@ -7,15 +7,25 @@ export default function FormTextInput({
   onFocus,
   onChange,
   hidden,
+  required,
+  min,
+  max,
+  length,
+  pattern,
 }) {
   return (
     <input
       type={type}
       className={className + " nw-form-control"}
-      placeholder={placeholder}
+      placeholder={required ? `${placeholder}*` : placeholder}
       onFocus={onFocus}
       hidden={hidden}
       onChange={onChange}
+      pattern={pattern}
+      required={required}
+      min={min}
+      max={max}
+      length={length}
     />
   );
 }

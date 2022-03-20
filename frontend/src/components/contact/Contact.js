@@ -2,8 +2,8 @@ import React from "react";
 import "./Contact.css";
 import Card from "../lib/Card/Card";
 import { useDeviceInfo } from "../../hooks/useDeviceInfo";
-import ContactForm from "./ContactForm";
 import { useResponsiveClassName } from "../../hooks/useResponsiveClassName";
+import ContactFormContainer from "./ContactFormContainer";
 
 export default function Contact() {
   const { deviceIsDesktop, screenWidth } = useDeviceInfo();
@@ -28,7 +28,7 @@ export default function Contact() {
           </span>
         </Card.Header>
         <Card.Body style={{ padding: "2rem" }}>
-          <ContactForm />
+          <ContactFormContainer />
         </Card.Body>
       </Card>
     </div>

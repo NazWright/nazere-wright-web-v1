@@ -2,4 +2,5 @@
 
 module.exports = (app) => {
   exports.projects = require("./projects")(app);
+  exports.contact = require("./contact")(app);
 };

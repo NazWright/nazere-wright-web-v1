@@ -6,26 +6,33 @@ import ContactDropDown from "./ContactDropDown";
 import { useResponsiveClassName } from "../../hooks/useResponsiveClassName";
 import { dropDownOptions } from "./contactDropDownData";
 
-export default function ContactForm() {
+export default function ContactForm({ handleSubmit, onInputChange }) {
   const responsiveClassName = useResponsiveClassName();
   const changeInputLayoutOnMobile =
     responsiveClassName !== "desktop" && "flex-column";
 
   return (
-    <Form>
+    <Form onSubmit={handleSubmit}>
       <Row className={changeInputLayoutOnMobile}>
         <Col>
           <Form.Input
+            name="name"
             type="text"
             placeholder="Name"
             className="fluid-width mr-5"
+            required={true}
+            onChange={(event) => onInputChange("name", event.target.value)}
           />
         </Col>
         <Col>
           <Form.Input
-            type="text"
+            type="tel"
             placeholder="Phone Number"
             className="fluid-width"
+            onChange={(event) =>
+              onInputChange("phoneNumber", event.target.value)
+            }
+            name="phoneNumber"
           />
         </Col>
       </Row>
@@ -33,18 +40,29 @@ export default function ContactForm() {
       <Row className={changeInputLayoutOnMobile}>
         <Col>
           <Form.Input
-            type="text"
+            type="email"
             placeholder="Email"
             className="fluid-width mr-5"
+            onChange={(event) => onInputChange("email", event.target.value)}
+            required={true}
           />
         </Col>
         <Col>
-          <ContactDropDown options={dropDownOptions} />
+          <ContactDropDown
+            options={dropDownOptions}
+            onChange={(event) => onInputChange("reason", event.target.value)}
+            required={true}
+          />
         </Col>
       </Row>
       <Row>
         <Col>
-          <Form.TextArea placeholder="Notes" className="fluid-width" />
+          <Form.TextArea
+            placeholder="Notes"
+            className="fluid-width"
+            onChange={(event) => onInputChange("notes", event.target.value)}
+            name="notes"
+          />
         </Col>
       </Row>
       <Row>
