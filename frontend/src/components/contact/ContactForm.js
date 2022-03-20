@@ -19,11 +19,12 @@ export default function ContactForm() {
             type="text"
             placeholder="Name"
             className="fluid-width mr-5"
+            required={true}
           />
         </Col>
         <Col>
           <Form.Input
-            type="text"
+            type="tel"
             placeholder="Phone Number"
             className="fluid-width"
           />
@@ -33,7 +34,7 @@ export default function ContactForm() {
       <Row className={changeInputLayoutOnMobile}>
         <Col>
           <Form.Input
-            type="text"
+            type="email"
             placeholder="Email"
             className="fluid-width mr-5"
           />

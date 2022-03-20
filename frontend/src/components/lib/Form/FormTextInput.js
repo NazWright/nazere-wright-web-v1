@@ -7,6 +7,11 @@ export default function FormTextInput({
   onFocus,
   onChange,
   hidden,
+  required,
+  min,
+  max,
+  length,
+  pattern,
 }) {
   return (
     <input
@@ -16,6 +21,11 @@ export default function FormTextInput({
       onFocus={onFocus}
       hidden={hidden}
       onChange={onChange}
+      pattern={pattern}
+      required={required}
+      min={min}
+      max={max}
+      length={length}
     />
   );
 }
