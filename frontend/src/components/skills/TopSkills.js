@@ -4,7 +4,7 @@ import "./Skills.css";
 
 const skills = [
   {
-    title: "Javascript UI & UX Development",
+    title: "Javascript UI Development",
     descText: "3 Yrs",
     footerText:
       "Well-versed in creating beautiful user interfaces with HTML, CSS,and JS technologies: React, Angular, JQuery",
@@ -26,10 +26,10 @@ const skills = [
     descColor: "white",
   },
   {
-    title: "Responsive Wordpress Web Design",
+    title: "Wordpress Development",
     descText: "3 Yrs",
     footerText:
-      "Ample hands-on industry experience involving Wordpress web design and customizing the Wordpress CMS backend.",
+      "Ample hands-on industry experience involving responsive Wordpress web design and customizing the Wordpress CMS backend.",
     background: "linear-gradient(rgb(158, 120, 251), #70c3f1 99%)",
     iconColor: "white",
     titleColor: "white",
