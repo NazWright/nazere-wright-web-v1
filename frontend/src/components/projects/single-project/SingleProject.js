@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { FaLink, FaGithub } from "react-icons/fa";
 import IconLink from "../../icon-link/IconLink";
-import { updateProjectRating } from "../../../redux/features/projects/projectSlice";
 import SingleProjectClicked from "./SingleProjectClicked";
 import SingleProjectLoaded from "./SingleProjectLoaded";
 import { style } from "./singleProjectStyle";
@@ -14,28 +13,13 @@ export default function SingleProject({
   gitHubURL,
   image,
   id,
-  additionalRating,
 }) {
   const deviceType = useSelector((state) => state.control.deviceType);
   const [descClicked, setDescClicked] = useState(false);
   const [updatedRating, setUpdatedRating] = useState(0);
   const [projectRated, setProjectRated] = useState(false);
   const [showModal, setShowModal] = useState(false);
-  const dispatch = useDispatch();
   const projectStyle = style(deviceType);
-  // changes the rating in the state
-  const changeRating = (rating) => {
-    if (!projectRated) {
-      setProjectRated(true);
-    }
-    setUpdatedRating(rating);
-
-    console.log("changed");
-  };
-
-  const submitRating = (ratingDetails) => {
-    dispatch(updateProjectRating(ratingDetails));
-  };
 
   const showRatingModal = () => {
     setTimeout(() => {
