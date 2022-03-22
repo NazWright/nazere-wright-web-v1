@@ -6,7 +6,11 @@ import ContactDropDown from "./ContactDropDown";
 import { useResponsiveClassName } from "../../hooks/useResponsiveClassName";
 import { dropDownOptions } from "./contactDropDownData";
 
-export default function ContactForm({ handleSubmit, onInputChange }) {
+export default function ContactForm({
+  handleSubmit,
+  onInputChange,
+  submitted,
+}) {
   const responsiveClassName = useResponsiveClassName();
   const changeInputLayoutOnMobile =
     responsiveClassName !== "desktop" && "flex-column";

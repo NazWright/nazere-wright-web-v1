@@ -10,15 +10,32 @@ class ContactFormContainer extends Component {
       <ContactForm
         handleSubmit={this.handleSubmit}
         onInputChange={this.onChange}
+        submitted={this.state.submitted}
       />
     );
   }
   // handle the submission of the contact form
   handleSubmit(event) {
     event.preventDefault();
-    console.log(this.state);
+    let form = event.target;
+    form.disabled = true;
     this.props.dispatch(sendContactMessage(this.state));
+    alert(
+      "Thank you for submitting your contacting me. I will email in response shortly"
+    );
+    // resetting all of the form values
+    form.reset();
+    form.disabled = false;
   }
+
+  intialState = {
+    name: "",
+    reason: "",
+    phoneNumber: "",
+    email: "",
+    notes: "",
+    submitted: false,
+  };
 
   //   change a value in the state.
   onChange(property, value) {
@@ -27,13 +44,7 @@ class ContactFormContainer extends Component {
 
   constructor(props) {
     super();
-    this.state = {
-      name: "",
-      reason: "",
-      phoneNumber: "",
-      email: "",
-      notes: "",
-    };
+    this.state = this.intialState;
     // binding the functions
     this.onChange = this.onChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
