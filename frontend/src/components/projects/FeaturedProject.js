@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { images } from "../../config/images";
 import "./Projects.css";
 
-export default function FeaturedProject() {
+export default function FeaturedProject({ cardClassName, imageClassName }) {
   return (
     <section id="featured-project">
       <div className="row">
@@ -64,7 +64,10 @@ export default function FeaturedProject() {
               justifyContent: "center",
             }}
           >
-            <div className="card card-featured-proj">
+            <div
+              className={`card card-featured-proj ${cardClassName || ""}`}
+              id="card-featured-proj"
+            >
               <div className="card-body">
                 <h4
                   className="card-title"

@@ -78,7 +78,7 @@ export default function SingleProject({
         showRating={!showModal}
         onChange={onChangeRating}
         value={projectRated ? updatedRating : undefined}
-        ratingLabel={"Care to rate this project?"}
+        ratingLabel={projectRated ? "Rated" : "Care to rate this project?"}
         titleStyle={projectStyle.title}
         logoStyle={projectStyle.logo}
         name={name}

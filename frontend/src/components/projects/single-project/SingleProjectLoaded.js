@@ -1,5 +1,4 @@
 import React from "react";
-import { Row, Col } from "react-bootstrap";
 import ProjectRating from "../ProjectRating";
 import ProjectLogo from "../ProjectLogo";
 import RatingModal from "../RatingModal";
