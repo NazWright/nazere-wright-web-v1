@@ -119,7 +119,6 @@ export default function SingleProject({
       <button className="nw-button mb-4" onClick={handleDescClick}>
         {descClicked ? "Close Description" : "View Description"}
       </button>
-      {renderIcons()}
     </div>
   );
 }
