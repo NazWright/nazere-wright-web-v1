@@ -15,7 +15,6 @@ export default function NavContainer() {
   const navigate = useNavigate();
 
   const handleLinkClick = (link) => {
-    console.log(link);
     dispatch(toggleSplashScreen(true));
     navigate(link.path);
   };
@@ -34,13 +33,19 @@ export default function NavContainer() {
         handleLinkClick={handleLinkClick}
         className={navDivClassName}
       >
-        <Nav.Group gridWidth={2}>
+        <Nav.Group gridWidth={responsiveClassName === "desktop" ? 2 : 12}>
           <HomePageLink
             link={navigationLinks.filter((link) => link.path === "/")[0]}
             handleLinkClick={handleLinkClick}
+            imageHeight={responsiveClassName === "desktop" ? 175 : 200}
+            altText="home page link"
+            className={`col col-2 d-flex justify-content-center ${
+              responsiveClassName !== "desktop" && "fluid-width"
+            }`}
           />
         </Nav.Group>
-        <Nav.Group gridWidth={8}>
+
+        <Nav.Group gridWidth={responsiveClassName === "desktop" ? 8 : 12}>
           {navigationLinks &&
             navigationLinks
               .filter((link) => link.path !== "/")
@@ -57,7 +62,7 @@ export default function NavContainer() {
                 );
               })}
         </Nav.Group>
-        <Nav.Group gridWidth={2}>
+        <Nav.Group gridWidth={responsiveClassName === "desktop" ? 2 : 12}>
           <div
             className="icon-container"
             onClick={() =>

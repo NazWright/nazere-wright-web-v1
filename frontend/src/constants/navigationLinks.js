@@ -31,4 +31,12 @@ export const navigationLinks = [
     image: "https://nxwv1images.s3.amazonaws.com/Nazere+Wright.png",
     linkText: "",
   },
+  {
+    path: "/blog",
+    clicked: false,
+    className: "nav-column-link",
+    imageLink: false,
+    image: "",
+    linkText: "Blog",
+  },
 ];

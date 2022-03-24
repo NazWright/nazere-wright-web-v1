@@ -1,9 +1,19 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
 import { images } from "../../config/images";
+import { toggleSplashScreen } from "../../redux/features/control/controlSlice";
 import "./Projects.css";
 
 export default function FeaturedProject({ cardClassName, imageClassName }) {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const viewAllProjects = () => {
+    dispatch(toggleSplashScreen(true));
+    navigate("/projects");
+  };
+
   return (
     <section id="featured-project">
       <div className="row">
@@ -28,6 +38,7 @@ export default function FeaturedProject({ cardClassName, imageClassName }) {
         <div className="col">
           <Link to="/projects">
             <h1
+              onClick={viewAllProjects}
               className="display-5 text-end"
               style={{
                 color: "rgb(243,146,6)",

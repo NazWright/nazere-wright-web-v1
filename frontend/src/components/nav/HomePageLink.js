@@ -1,21 +1,20 @@
 import React from "react";
-import { useDeviceInfo } from "../../hooks/useDeviceInfo";
 
-export default function HomePageLink({ link, handleLinkClick }) {
-  const { deviceIsDesktop } = useDeviceInfo();
-
+export default function HomePageLink({
+  link,
+  handleLinkClick,
+  imageHeight,
+  altText,
+  className,
+}) {
   return (
-    <div
-      className={`${
-        deviceIsDesktop ? "" : "fluid-width"
-      } col col-2 d-flex justify-content-center `}
-    >
+    <div className={className}>
       <div onClick={() => handleLinkClick(link)}>
         <img
-          height={175}
+          height={imageHeight}
           src={link.imageLink && link.image ? link.image : undefined}
           style={{ cursor: "pointer" }}
-          alt="home page link"
+          alt={altText}
         />
       </div>
     </div>
