@@ -2,8 +2,21 @@ const mongoose = require("mongoose");
 const Messages = mongoose.model("messages");
 const { validationResult } = require("express-validator");
 
-const contactController = () => {
+/**
+ * contactController
+ * Handles CRUD updates for the contact form.
+ */
+
+const contactController = (mongoose) => {
   return {
+    /**
+     * @function sendMessage
+     * Submits message to the database.
+     * @param {any} req - request object
+     * @param {any} res - response object
+     * @returns 200 - success | 500 - error | 400 - bad request
+     */
+
     async sendMessage(req, res) {
       try {
         const errors = validationResult(req);

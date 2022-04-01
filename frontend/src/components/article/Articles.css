@@ -1,0 +1,123 @@
+.detailed-article div {
+  display: flex;
+  justify-content: center;
+  margin: 0.5rem;
+}
+
+.detailed-article button {
+  color: white;
+  font-weight: bold;
+  text-shadow: 2px 2px 2px black;
+  cursor: pointer;
+  background: linear-gradient(rgb(112, 195, 241), rgb(241, 175, 12) 99%);
+  transition: 0.4s ease-in-out;
+  padding: 1rem;
+  border-radius: 16px;
+  border: none;
+  box-shadow: 4px 2px 2px black;
+  height: 8vh;
+  position: absolute;
+}
+
+.detailed-article button:hover {
+  color: white;
+  cursor: pointer;
+  box-shadow: 4px 2px 2px black, 4px 4px 4px black;
+  transform: scale(1.1);
+}
+.detailed-article button:focus {
+  outline: 2px 2px 3px lightblue;
+  color: black;
+  transform: scale(0.9);
+  box-shadow: inset 5px 5px 5px lightblue;
+  background: linear-gradient(rgb(241, 175, 12), rgb(112, 195, 241) 99%);
+  text-shadow: 2px 2px 2px white;
+}
+
+.detailed-article button svg {
+  text-shadow: 2px 2px 2px black;
+  font-weight: bolder;
+}
+
+.detailed-article h2 {
+  color: rgb(241, 175, 12);
+  text-shadow: 2px 2px 2px black;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.detailed-article .col-sm-7 {
+  display: flex;
+  flex-direction: column;
+}
+
+.detailed-article p {
+  color: white;
+  text-align: center;
+  font-size: 1.5vw;
+  font-weight: bold;
+}
+
+.detailed-article .scrolling-content {
+  overflow: scroll;
+  height: 400px;
+  position: relative;
+  border-bottom: 1px solid grey;
+  width: 100%;
+}
+
+.detailed-article .scrolling-indicator {
+  color: white;
+  font-size: 1vw;
+  font-weight: bold;
+  position: relative;
+}
+
+.detailed-article .rating-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.detailed-article .rating-container > div {
+  position: absolute;
+  top: 0;
+  flex-direction: column;
+  color: white;
+  align-items: center;
+}
+
+.rating-container h5 {
+  font-size: 1vw;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.rating-container h4 {
+  font-weight: bold;
+}
+.rating-container > div {
+  margin: 1rem;
+}
+
+.article-content {
+  border-radius: 20px;
+  margin: 1rem;
+  height: 60vh;
+  box-shadow: 5px 10px 5px black;
+}
+.article-content .card-body {
+  overflow: scroll;
+  font-weight: 600;
+  flex-direction: column;
+  padding: 2rem;
+}
+.expand-content {
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s ease-in-out;
+  color: rgb(112, 195, 241);
+}
+.expand-content:hover {
+  transform: scale(1.1);
+  text-shadow: 2px 2px 2px black;
+}

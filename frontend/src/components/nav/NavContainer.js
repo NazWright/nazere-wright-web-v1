@@ -8,6 +8,7 @@ import Nav from "./Nav";
 import HomePageLink from "./HomePageLink";
 import { navigateTo } from "../../utils/navigateTo";
 import { useDeviceInfo } from "../../hooks/useDeviceInfo";
+import { selectArticle } from "../../redux/features/blog/blogSlice";
 
 export default function NavContainer() {
   const dispatch = useDispatch();
@@ -16,6 +17,10 @@ export default function NavContainer() {
 
   const handleLinkClick = (link) => {
     dispatch(toggleSplashScreen(true));
+    // clearing the selected article in state if the user is navigating away from the selected blog post.
+    if (window.location.pathname === "/blog") {
+      dispatch(selectArticle(""));
+    }
     navigate(link.path);
   };
 
@@ -24,7 +29,7 @@ export default function NavContainer() {
 
   const navDivClassName = `${
     deviceIsDesktop ? "flex-row flex-wrap" : "flex-column"
-  } row navigation align-items-center`;
+  } row navigation align-items-center mb-2`;
 
   return (
     <section>
@@ -66,7 +71,7 @@ export default function NavContainer() {
           <div
             className="icon-container"
             onClick={() =>
-              navigateTo("https://www.instagram.com/nazwrightthedeveloper/")
+              navigateTo("https://www.instagram.com/nazwrightthedev/")
             }
             style={{
               cursor: "pointer",

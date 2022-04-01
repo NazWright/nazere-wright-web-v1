@@ -4,6 +4,8 @@ import Card from "../lib/Card/Card";
 import { useDeviceInfo } from "../../hooks/useDeviceInfo";
 import { useResponsiveClassName } from "../../hooks/useResponsiveClassName";
 import ContactFormContainer from "./ContactFormContainer";
+import { navigateTo } from "../../utils/navigateTo";
+import { Row, Col } from "react-bootstrap";
 
 export default function Contact() {
   const { deviceIsDesktop, screenWidth } = useDeviceInfo();
