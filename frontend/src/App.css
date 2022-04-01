@@ -461,3 +461,14 @@ select.nw-form-control {
 .filter-container-blog i:hover {
   color: rgb(241, 175, 12);
 }
+
+.home-page-link {
+  transition: 0.3s ease-in-out;
+  transition-delay: 20ms;
+}
+.home-page-link:hover {
+  transform: scale(1.2);
+}
+.home-page-link:active {
+  transform: scale(0.9);
+}
