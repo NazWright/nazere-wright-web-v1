@@ -2,13 +2,17 @@ import React, { useState } from "react";
 import { Row, Col, Card } from "react-bootstrap";
 import "./Articles.css";
 import { FaArrowLeft, FaExpand, FaScroll } from "react-icons/fa";
-import ReactStars from "react-rating-stars-component";
+import ArticleRating from "./ArticleRating";
 
 export default function ArticleDetailed({ backFunction, article }) {
   const [value, setValue] = useState(0);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [articleRated, setArticleRated] = useState(false);
 
   const onChange = (rating) => {
+    setArticleRated(true);
     setValue(rating);
+    if (articleRated) setModalOpen(!modalOpen);
   };
 
   const { title, author, dateCreated, content } = article;
@@ -47,18 +51,15 @@ export default function ArticleDetailed({ backFunction, article }) {
         </div>
       </Col>
       <Col sm={2} className="rating-container">
-        <div>
-          <h4>How did I do?</h4>
-          <h5>Rate this article</h5>
-          <ReactStars
-            size={30}
-            activeColor={"rgb(241, 175, 12)"}
-            count={5}
-            isHalf={true}
-            onChange={onChange}
-            value={value}
-          />
-        </div>
+        <ArticleRating
+          count={5}
+          hasHalfRating={true}
+          heading={[<h4>How did I do?</h4>, <h5>Rate this article</h5>]}
+          onRatingChange={onChange}
+          ratingValue={value}
+          size={30}
+          starsColor={"rgb(241, 175, 12)"}
+        />
       </Col>
     </Row>
   );
