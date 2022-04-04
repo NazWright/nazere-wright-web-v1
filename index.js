@@ -51,6 +51,6 @@ app.post("/subscribe", (req, res) => {
 
 app.get("/create", projectController.createProject);
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => console.log("Listening"));
 module.exports = app;

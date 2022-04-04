@@ -6,27 +6,6 @@ import "./Skills.css";
 export default function Skills() {
   const deviceType = useSelector((state) => state.control.deviceType);
 
-  const DropDownBodyTemplate = () => {
-    return (
-      <div className="row">
-        <div className="col-6">
-          <h5>Language Experience</h5>
-          <ul>
-            <li>
-              JavaScript <span> 3 years</span>
-            </li>
-          </ul>
-        </div>
-        <div className="col-6">
-          <h5> Project Experience </h5>
-          <ul>
-            <li>React ATS</li>
-          </ul>
-        </div>
-      </div>
-    );
-  };
-
   const DropDowHeaderTemplate = ({ text }) => {
     return (
       <div>
@@ -66,12 +45,8 @@ export default function Skills() {
           <ProgressBar
             percentageFill={85}
             backgroundColor="rgb(241, 175, 12)"
-            label={"Front-end Development"}
+            label={"JavaScript UI Development"}
             unit={"Proficiency"}
-            dropDownBody={<DropDownBodyTemplate />}
-            dropDownHeader={
-              <DropDowHeaderTemplate text={"Front-end Development"} />
-            }
             showValue={true}
             animationDelay={animationDelay}
           />

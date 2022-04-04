@@ -12,6 +12,8 @@ import SplashScreen from "./components/splash-screen/SplashScreen";
 import SplashScreenContent from "./components/nw-splash-screen-content/SplashScreenContent";
 import { useDeviceInfo } from "./hooks/useDeviceInfo";
 import NavContainer from "./components/nav/NavContainer";
+import BlogContainer from "./components/blog/BlogContainer";
+import ArticleDetailed from "./components/article/ArticleDetailed";
 
 function App() {
   const dispatch = useDispatch();
@@ -40,8 +42,6 @@ function App() {
     };
   }, [dispatch]);
 
-  console.log("updated");
-
   return (
     <div className="App" id="bg-video-wrapper" style={{ height: "100%" }}>
       <SplashScreen splashContent={<SplashScreenContent />}>
@@ -57,6 +57,7 @@ function App() {
           <Route path="/projects" element={<Projects />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/skills" element={<Skills />} />
+          <Route path="/blog" element={<BlogContainer />} />
         </Routes>
       </SplashScreen>
     </div>

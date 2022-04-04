@@ -5,6 +5,8 @@ import { Row, Col } from "react-bootstrap";
 import ContactDropDown from "./ContactDropDown";
 import { useResponsiveClassName } from "../../hooks/useResponsiveClassName";
 import { dropDownOptions } from "./contactDropDownData";
+import { navigateTo } from "../../utils/navigateTo";
+import { socialLinks } from "../../constants/socialLinks";
 
 export default function ContactForm({
   handleSubmit,
@@ -14,6 +16,10 @@ export default function ContactForm({
   const responsiveClassName = useResponsiveClassName();
   const changeInputLayoutOnMobile =
     responsiveClassName !== "desktop" && "flex-column";
+
+  const handleIconClick = (url) => {
+    navigateTo(url);
+  };
 
   return (
     <Form onSubmit={handleSubmit}>
@@ -70,6 +76,17 @@ export default function ContactForm({
         </Col>
       </Row>
       <Row>
+        <Col className={`contact-me-social-icons ${responsiveClassName}`}>
+          {socialLinks.map((link) => {
+            return (
+              <i
+                key={link.name}
+                className={link.className}
+                onClick={() => handleIconClick(link.url)}
+              ></i>
+            );
+          })}
+        </Col>
         <Col className="fluid-width d-flex justify-content-end">
           <Button className={`nw-button ${responsiveClassName}`}>Send</Button>
         </Col>

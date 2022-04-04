@@ -12,6 +12,7 @@ export default function AboutMe() {
         <img
           src="https://nxwv1images.s3.amazonaws.com/Wright%2CNazere_Headshot.png"
           alt="headshot of Nazere Wright, Software Engineer"
+          style={{ top: "10px", position: "relative" }}
         />
       </div>
 

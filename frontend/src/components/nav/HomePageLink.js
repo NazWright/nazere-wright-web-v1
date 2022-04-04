@@ -15,6 +15,7 @@ export default function HomePageLink({
           src={link.imageLink && link.image ? link.image : undefined}
           style={{ cursor: "pointer" }}
           alt={altText}
+          className={"home-page-link"}
         />
       </div>
     </div>
