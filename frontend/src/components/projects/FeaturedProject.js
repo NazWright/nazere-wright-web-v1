@@ -37,7 +37,7 @@ export default function FeaturedProject({ cardClassName, imageClassName }) {
         </div>
         <div className="col">
           <Link to="/projects">
-            <h1
+            <h2
               onClick={viewAllProjects}
               className="display-5 text-end"
               style={{
@@ -49,7 +49,7 @@ export default function FeaturedProject({ cardClassName, imageClassName }) {
               }}
             >
               View All Projects&gt;&gt;&gt;
-            </h1>
+            </h2>
           </Link>
         </div>
       </div>

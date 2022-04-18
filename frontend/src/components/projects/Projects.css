@@ -10,3 +10,12 @@
 .slide-in-from-right {
   animation: slide-in-card 1s ease-in-out;
 }
+
+.featured-project h2 {
+  transition: 0.3s ease-in-out;
+}
+
+.featured-project h2:hover {
+  transform: translate(1.1);
+  color: white;
+}

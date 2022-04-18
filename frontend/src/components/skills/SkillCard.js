@@ -16,13 +16,8 @@ export default function SkillCard({
       style={{ background, footerText, descText }}
     >
       <div className="card-body">
-        <i
-          className={icon}
-          style={{
-            borderBottomColor: "rgb(241,175,12)",
-            color: iconColor,
-          }}
-        >
+        <i>
+          {icon}
           <h3
             className="name"
             style={{
