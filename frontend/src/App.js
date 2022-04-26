@@ -13,7 +13,6 @@ import SplashScreenContent from "./components/nw-splash-screen-content/SplashScr
 import { useDeviceInfo } from "./hooks/useDeviceInfo";
 import NavContainer from "./components/nav/NavContainer";
 import BlogContainer from "./components/blog/BlogContainer";
-import ArticleDetailed from "./components/article/ArticleDetailed";
 
 function App() {
   const dispatch = useDispatch();

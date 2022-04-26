@@ -1,11 +1,15 @@
 import React from "react";
 import { Card, Row, Col } from "react-bootstrap";
-import Button from "../lib/Button/Button";
+import Button from "../../lib/Button/Button";
 import { MdDescription } from "react-icons/md";
 import { FaClock, FaUser, FaEye } from "react-icons/fa";
 import { BsArrowRightShort } from "react-icons/bs";
 
-export default function ArticleSingle({
+/**
+ * function ArticleListItem
+ * Individual list item that gives preview of article.
+ */
+export default function ArticleListItem({
   title,
   author,
   views,
