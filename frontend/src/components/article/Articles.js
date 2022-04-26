@@ -1,5 +1,5 @@
 import React from "react";
-import ArticleSingle from "./ArticleSingle";
+import ArticleListItem from "./single-article/ArticleListItem";
 import { useDispatch } from "react-redux";
 import { toggleSplashScreen } from "../../redux/features/control/controlSlice";
 import { selectArticle } from "../../redux/features/blog/blogSlice";
@@ -31,7 +31,7 @@ export default function Articles({ articles }) {
     <div className="article-container">
       {articles.map((article) => {
         return (
-          <ArticleSingle
+          <ArticleListItem
             key={article._id}
             {...article}
             handleClick={() => viewDetailedArticle(article._id)}

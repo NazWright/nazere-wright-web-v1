@@ -6,7 +6,7 @@ import DropDown from "../lib/DropDown/DropDown";
 import Button from "../lib/Button/Button";
 
 /**
- * @function BlogContainer
+ * @function BlogFilter
  * Component contains form responsible for filtering through the blog listing content on /blog.
  * @author Nazere Wright
  * @props handleChange - callback for changing the value of an input on the form.

@@ -5,7 +5,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchBlogs } from "../../redux/features/blog/blogSlice.js";
 import { toggleSplashScreen } from "../../redux/features/control/controlSlice";
 import { selectArticle } from "../../redux/features/blog/blogSlice";
-import ArticleDetailed from "../article/ArticleDetailed";
+
+import ArticleDetailed from "../article/single-article/ArticleDetailed";
 // fetch the articles here
 
 /**
