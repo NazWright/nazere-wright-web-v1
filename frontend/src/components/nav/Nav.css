@@ -9,7 +9,7 @@
 .nav-column-link {
   text-decoration: none;
   color: white;
-  transition: 0.5s ease-in-out;
+  transition: 0.3s ease-in-out;
   text-transform: capitalize;
   font-weight: bold;
 }
@@ -35,11 +35,14 @@
 }
 
 .icon-container .fa {
-  transition: 0.5s ease-in-out;
+  transition: 0.2s ease-in-out;
   color: white;
+  font-size: 1.5vw;
 }
+
 .icon-container .fa:hover {
   color: #9e78fb;
+  transform: scale(1.5);
 }
 
 .icons-nav {

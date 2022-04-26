@@ -1,44 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import SkillCard from "./SkillCard";
 import "./Skills.css";
-
-const skills = [
-  {
-    title: "Javascript UI Development",
-    descText: "3 Yrs",
-    footerText:
-      "Well-versed in creating beautiful user interfaces with HTML, CSS,and JS technologies: React, Angular, JQuery",
-    background: "linear-gradient(rgb(158, 120, 251), #70c3f1 99%)",
-    iconColor: "white",
-    titleColor: "white",
-    icon: "fa fa-code icon",
-    descColor: "white",
-  },
-  {
-    title: "API Development",
-    titleColor: "white",
-    iconColor: "white",
-    descText: "2 yrs",
-    footerText:
-      "Experienced in designing and developing performant, secure, cutting-edge APIs in Node.js & Java",
-    background: "linear-gradient(#70c3f1, rgb(241, 175, 12) 99%)",
-    icon: "fa fa-wifi icon",
-    descColor: "white",
-  },
-  {
-    title: "Wordpress Development",
-    descText: "3 Yrs",
-    footerText:
-      "Ample hands-on industry experience involving responsive Wordpress web design and customizing the Wordpress CMS backend.",
-    background: "linear-gradient(rgb(158, 120, 251), #70c3f1 99%)",
-    iconColor: "white",
-    titleColor: "white",
-    icon: "fa fa-wordpress icon",
-    descColor: "white",
-  },
-];
+import axios from "axios";
+import { GiMonkeyWrench } from "react-icons/gi";
+import { IoLogoReact } from "react-icons/io5";
+import { FaRegHandshake } from "react-icons/fa";
 
 export default function TopSkills() {
+  const [skills, setSkills] = useState([]);
+
+  useEffect(() => {
+    async function retrieveServices() {
+      const response = await axios.get("/api/services");
+      setSkills(response.data);
+    }
+    retrieveServices();
+  }, []);
+
+  const iconElements = [
+    <FaRegHandshake size={50} color={"white"} fontWeight="bold" />,
+    <IoLogoReact size={50} color={"white"} fontWeight="bold" />,
+    <GiMonkeyWrench size={50} color={"white"} fontWeight="bold" />,
+  ];
+
   return (
     <section className="features-boxed mb-5">
       <div className="container">
@@ -46,16 +30,16 @@ export default function TopSkills() {
           className="d-flex justify-content-center"
           style={{ width: "100%" }}
         >
-          <h1 className="display-5 text-center intro-heading">
-            {" "}
-            Top Services{" "}
-          </h1>
+          <h1 className="display-5 text-center intro-heading"> Services </h1>
         </div>
         <div className="row features d-flex justify-content-center flex-row">
-          {skills.map((skill) => {
+          {skills.map((skill, index) => {
             return (
-              <div className="col-sm-6 col-md-5 col-lg-4 item skills-col">
-                <SkillCard {...skill} />
+              <div
+                className="col-sm-6 col-md-5 col-lg-4 item skills-col"
+                key={skill.title}
+              >
+                <SkillCard {...skill} icon={iconElements[index]} />
               </div>
             );
           })}
