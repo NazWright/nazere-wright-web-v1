@@ -12,6 +12,7 @@ export default function BackToBlogButton({ backFunction }) {
         <FaArrowLeft style={{ textShadow: "2px 2px 2px black" }} /> Back to All
         Articles
       </button>
+      <div></div>
     </div>
   );
 }
