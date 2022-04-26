@@ -2,34 +2,37 @@ module.exports = {
   async getServices() {
     const skills = [
       {
-        title: "Consultation",
+        title: "Consulting",
         footerText:
-          "Well-versed in creating beautiful user interfaces with HTML, CSS,and JS technologies: React, Angular, JQuery",
+          "Consulting services ensure feature enhancement and support throughout all stages of app development. Client's needs are thoroughly understood and used to devise the most beneficial & effective business solutions.",
         background: "linear-gradient(rgb(158, 120, 251), #70c3f1 99%)",
         iconColor: "white",
         titleColor: "white",
         icon: "fa fa-code icon",
         descColor: "white",
+        viewMoreLink: "/consulting",
       },
       {
-        title: "Development",
+        title: "Design & Development",
         titleColor: "white",
         iconColor: "white",
         footerText:
-          "Experienced in designing and developing performant, secure, cutting-edge APIs in Node.js & Java",
+          "Your online presence can make or break your business. Design & development services ensure the creation of an appropriate, effective web design that reflects your business. In addition, we implement any feature requirements for your application.  ",
         background: "linear-gradient(#70c3f1, rgb(241, 175, 12) 99%)",
         icon: "fa fa-wifi icon",
         descColor: "white",
+        viewMoreLink: "/development",
       },
       {
-        title: "Optimization & Maintenance",
+        title: "Support & Maintenance",
         footerText:
-          "Ample hands-on industry experience involving responsive Wordpress web design and customizing the Wordpress CMS backend.",
+          "Support & maintenance services ensure that your application is highly reliable, available & can evolve with the ever-growing needs/changes of your business.",
         background: "linear-gradient(rgb(158, 120, 251), #70c3f1 99%)",
         iconColor: "white",
         titleColor: "white",
         icon: "fa fa-wordpress icon",
         descColor: "white",
+        viewMoreLink: "/maintenance",
       },
     ];
     return skills;

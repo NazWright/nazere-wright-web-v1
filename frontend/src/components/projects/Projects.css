@@ -19,3 +19,13 @@
   transform: translate(1.1);
   color: white;
 }
+
+.featured-project-link {
+  transition: 0.3s ease-in-out;
+  text-transform: capitalize;
+}
+.featured-project-link:hover {
+  font-weight: bolder;
+  text-decoration: underline;
+  text-transform: uppercase;
+}

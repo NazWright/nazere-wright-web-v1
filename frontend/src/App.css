@@ -472,3 +472,13 @@ select.nw-form-control {
 .home-page-link:active {
   transform: scale(0.9);
 }
+
+.view-services-link {
+  color: white;
+  font-style: italic;
+  font-weight: bold;
+}
+.view-services-link:hover {
+  color: blue;
+  fill: blue;
+}

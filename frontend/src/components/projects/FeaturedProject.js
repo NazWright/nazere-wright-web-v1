@@ -101,8 +101,13 @@ export default function FeaturedProject({ cardClassName, imageClassName }) {
                       "https://omnivoredev.wpengine.com/connect-marketplace/")
                   }
                 >
-                  <i className="fa fa-external-link" style={{ fontSize: 30 }} />
-                  <span>Go to website</span>
+                  <div className="featured-project-link">
+                    <i
+                      className="fa fa-external-link"
+                      style={{ fontSize: 30 }}
+                    />
+                    <span>Go to website</span>
+                  </div>
                 </div>
               </div>
             </div>

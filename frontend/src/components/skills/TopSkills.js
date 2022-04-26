@@ -30,10 +30,7 @@ export default function TopSkills() {
           className="d-flex justify-content-center"
           style={{ width: "100%" }}
         >
-          <h1 className="display-5 text-center intro-heading">
-            {" "}
-            Top Services{" "}
-          </h1>
+          <h1 className="display-5 text-center intro-heading"> Services </h1>
         </div>
         <div className="row features d-flex justify-content-center flex-row">
           {skills.map((skill, index) => {
